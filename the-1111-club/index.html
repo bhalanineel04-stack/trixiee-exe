@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f4eedf">
+<title>The 11:11 Club — Case 011</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<header class="topbar">
+  <a class="wordmark" href="#top" aria-label="The 11:11 Club home"><span class="seal">✳</span> THE 11:11 CLUB <span class="micro">// EST. WHENEVER</span></a>
+  <div class="top-right"><span class="red-dot"></span> PRIVATE INVESTIGATION UNIT <span class="top-id">FILE № 011</span></div>
+</header>
+<main id="top">
+  <section class="hero">
+    <div class="hero-left">
+      <div class="eyebrow"><span class="line"></span> DEPARTMENT OF UNEXPLAINED GOOD THINGS <span class="line"></span></div>
+      <div class="case-stamp" aria-hidden="true">TOP<br>SECRET</div>
+      <p class="file-label">CASE FILE <span>011—A</span> <span class="status-pill"><i></i> OPEN</span></p>
+      <h1>The curious case<br>of <em>being</em><br><span class="outline">unforgettable.</span></h1>
+      <p class="intro">A very serious investigation into a not-so-serious question: how does one person make the ordinary feel like a story worth keeping?</p>
+      <div class="hero-actions"><button class="btn-primary" id="start-case">OPEN THE CASE <span>↘</span></button><span class="tiny-note">NO EXPERIENCE REQUIRED.<br>JUST CURIOSITY.</span></div>
+      <div class="case-meta"><span>SUBJECT: <b>TRIXIEE</b></span><span>LEAD DETECTIVE: <b>LAMBO</b></span><span>CLASSIFICATION: <b>SOFT SPOT</b></span></div>
+    </div>
+    <div class="hero-right">
+      <div class="board-label"><span>EXHIBIT A</span><span>DO NOT SHAKE</span></div>
+      <div class="board" id="evidence-board">
+        <svg class="red-thread" viewBox="0 0 430 410" preserveAspectRatio="none" aria-hidden="true"><path d="M80 95 L205 170 L335 90 L275 275 L120 310 L80 95 M205 170 L275 275 L335 90"/></svg>
+        <button class="evidence polaroid" data-clue="photo" aria-label="Inspect the photograph">
+          <span class="pin"></span><span class="photo-art"><span class="sun-face">☻</span><span class="photo-spark">✳</span><span class="photo-hill"></span></span>
+          <span class="polaroid-caption">A RARE KIND OF LIGHT <small>EXHIBIT 01 / PHOTO</small></span>
+          <span class="clue-badge">01</span>
+        </button>
+        <button class="evidence cassette" data-clue="tape" aria-label="Inspect the cassette">
+          <span class="pin"></span><span class="cassette-label">SIDE A <b>THE LAUGH TRACK</b><small>RECOVERED FROM A TUESDAY</small></span><span class="cassette-wheels"><i></i><i></i></span><span class="clue-badge">02</span>
+        </button>
+        <button class="evidence note" data-clue="note" aria-label="Inspect the note">
+          <span class="paperclip">⌁</span><span class="note-title">FIELD NOTE</span><span class="scribble">some people<br>are the plot twist.</span><span class="note-sign">— L.</span><span class="clue-badge">03</span>
+        </button>
+        <div class="board-tape">SUSPICIOUSLY<br>WHOLESOME</div>
+        <div class="board-footer">EVIDENCE BOARD <span>3 ITEMS RECOVERABLE</span></div>
+      </div>
+      <p class="board-caption"><span>↳</span> THE EVIDENCE IS CLICKABLE. YES, REALLY.</p>
+    </div>
+  </section>
+
+  <section class="mission" id="investigation">
+    <div class="section-kicker"><span>01 / THE BRIEF</span><span>READ BEFORE TOUCHING ANYTHING</span></div>
+    <div class="mission-grid">
+      <div><h2>Something<br>doesn't <em>add up.</em></h2><p class="muted">Three pieces of evidence. One suspiciously wonderful human. Your job is to inspect the evidence, collect the clues, and figure out what this entire operation is really about.</p><div class="mission-stamp">HIGH PRIORITY<br><b>LOW DANGER</b></div></div>
+      <div class="brief-card"><div class="brief-top"><span>INTERNAL MEMO</span><span>11:11 PM</span></div><p class="typed">Detective,</p><p>We have reason to believe that <span class="red-underline">Trixiee has been quietly making life better</span> without filing the appropriate paperwork.</p><p>Three exhibits have been left at the scene. Examine each one. The recovered symbols will point to a four-letter answer. Enter it in the lockbox to close the case.</p><p class="typed">Please proceed with unreasonable curiosity.</p><div class="memo-signature">— Lambo <span>✳</span></div></div>
+    </div>
+  </section>
+
+  <section class="lock-section" id="lockbox">
+    <div class="section-kicker"><span>02 / THE LOCKBOX</span><span>THE ANSWER IS HIDING IN PLAIN SIGHT</span></div>
+    <div class="lock-card">
+      <div class="lock-graphic"><div class="lock-top">SECURE STORAGE / 011-A</div><div class="lock-emoji" id="lock-icon">▣</div><div class="lock-hint">A 4-LETTER PASSWORD</div><div class="lock-slots" aria-label="Number of collected clues"><span id="slot1">_</span><span id="slot2">_</span><span id="slot3">_</span><span id="slot4">_</span></div></div>
+      <div class="lock-content"><p class="file-label">FINAL CHECKPOINT <span>ENCRYPTION: FRIENDSHIP</span></p><h2>What’s the <em>word?</em></h2><p>Inspect all three exhibits. Each one reveals a letter. Put the four-letter word together, then unlock the archive.</p>
+        <form id="unlock-form" class="unlock-form"><label class="sr-only" for="secret-code">Enter the four-letter code</label><input id="secret-code" maxlength="12" autocomplete="off" placeholder="TYPE YOUR GUESS…" spellcheck="false"><button class="btn-primary" type="submit">DECODE ↗</button></form>
+        <p class="lock-feedback" id="lock-feedback" aria-live="polite">CASE PROGRESS: <span id="progress">0 / 3 EXHIBITS INSPECTED</span></p>
+        <div class="collected" id="collected"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing" id="closing">
+    <div class="closing-scribble">CASE CLOSED? <span>✳</span></div>
+    <div class="closing-inner"><p class="eyebrow">ARCHIVE ENTRY / PERSONAL COPY</p><h2>Some mysteries<br>are better <em>kept.</em></h2><p>The case isn't really about solving anything. It's about the tiny, unexplainable ways certain people become part of your favourite stories.</p><button class="btn-dark" id="open-letter" disabled>OPEN THE SEALED NOTE <span>↗</span></button><p class="unlock-small" id="unlock-small">THE NOTE IS SEALED UNTIL THE CASE IS SOLVED.</p></div>
+    <div class="seal-mark">11<br><span>✳</span><br>11</div>
+  </section>
+  <footer><span>THE 11:11 CLUB © SOMEWHERE IN THE UNIVERSE</span><span>MADE WITH QUESTIONABLE AMOUNTS OF AFFECTION.</span><button id="reset-case">RESET INVESTIGATION ↺</button></footer>
+</main>
+
+<div class="modal-backdrop" id="clue-modal" hidden>
+  <section class="modal clue-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" data-close aria-label="Close dialog">×</button><div class="modal-eyebrow" id="modal-exhibit">EXHIBIT 01 / RECOVERED ITEM</div><div id="modal-art" class="modal-art">✳</div><h2 id="modal-title">Exhibit Title</h2><p id="modal-copy">Clue description.</p><div class="revealed-letter"><span>RECOVERED SYMBOL</span><b id="modal-letter">✳</b></div><button id="collect-clue" class="btn-primary">COLLECT EVIDENCE +</button>
+  </section>
+</div>
+
+<div class="modal-backdrop" id="letter-modal" hidden>
+  <section class="modal letter-modal" role="dialog" aria-modal="true" aria-labelledby="letter-title">
+    <button class="modal-close" data-close aria-label="Close letter">×</button><div class="letter-seal">✳</div><p class="eyebrow">PERSONAL / NOT FOR THE CASE FILE</p><h2 id="letter-title">Dear Trixiee,</h2><div class="letter-body"><p>This whole investigation was a very elaborate excuse to tell you something simple: you make the everyday stuff feel a little less everyday.</p><p>You're the unexpected plot twist, the favourite notification, the person who can turn a random little moment into an inside joke that survives for ages.</p><p>So here's your official, completely unscientific certificate: <strong>you are a genuinely good thing in this world.</strong> Please continue being suspiciously, unapologetically you.</p><p>And if life ever gets loud, confusing, or a bit too much — remember there's a Lambo in your corner, cheering for you with zero chill.</p></div><div class="letter-sign">Always rooting for you,<br><span>— Lambo ♡</span></div><button class="btn-dark" data-close>FOLD THIS NOTE BACK UP ↗</button>
+  </section>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="./app.js"></script>
+</body>
+</html>
