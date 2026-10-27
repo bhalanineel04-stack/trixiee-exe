@@ -1,49 +1,212 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#101018">
-<title>AFTERHOURS FM — A private broadcast for Trixiee</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0a101d">
+<title>The Night Line — a small journey for Trixiee</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
-:root{--bg:#101018;--panel:#1a1a25;--cream:#f2e7ce;--muted:#aaa9b9;--red:#ff765f;--mint:#9cf3d9;--lilac:#c3b2ff;--line:#ffffff22}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 15% 10%,#3e2b3d55,transparent 40%),radial-gradient(ellipse at 90% 80%,#203d4250,transparent 42%),repeating-linear-gradient(0deg,transparent 0 3px,#ffffff03 4px 5px)}
-button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:2px solid var(--mint);outline-offset:4px}
-.shell{width:min(1080px,92vw);margin:auto}.mono{font:10px 'DM Mono',monospace;letter-spacing:.17em;text-transform:uppercase}.top{padding:25px 0;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);color:#b9b5c4}.brand{display:flex;align-items:center;gap:10px}.brand-mark{width:25px;height:25px;display:grid;place-items:center;border:1px solid var(--red);border-radius:50%;color:var(--red);font-size:12px}.live{display:flex;gap:8px;align-items:center}.live i{width:6px;height:6px;background:var(--mint);border-radius:50%;box-shadow:0 0 10px var(--mint)}
-.hero{padding:70px 0 76px;display:grid;grid-template-columns:.9fr 1.1fr;align-items:center;gap:45px}.eyebrow{color:var(--red)}h1{font:400 clamp(3.4rem,7.5vw,7rem)/.9 'Playfair Display',serif;letter-spacing:-.06em;margin:22px 0 26px}h1 em{color:var(--mint);font-weight:400}.intro{font-size:15px;line-height:1.9;color:#bdbccc;max-width:420px}.intro strong{color:var(--cream);font-weight:400}.tagline{margin-top:25px;font:9px/1.9 'DM Mono',monospace;letter-spacing:.12em;color:#8e8b9f;text-transform:uppercase}
-.radio-wrap{position:relative;padding:18px;background:#0b0b11;border:1px solid #ffffff1e;box-shadow:0 30px 80px #0008;transform:rotate(.5deg)}.radio{position:relative;border:1px solid #5b554d;background:linear-gradient(135deg,#292833,#171720 48%,#24222a);padding:18px;border-radius:3px}.radio:before{content:"";position:absolute;inset:6px;border:1px solid #ffffff0e;pointer-events:none}.radio-head{display:flex;justify-content:space-between;align-items:center;color:#bcb0a4;font:9px 'DM Mono',monospace;letter-spacing:.17em;border-bottom:1px solid #ffffff20;padding-bottom:13px}.brand-stamp{color:var(--red);font-weight:500}.display{margin:16px 0 12px;border:1px solid #253c39;background:linear-gradient(110deg,#0b1718,#101e1d);padding:16px 16px 12px;box-shadow:inset 0 0 18px #000a;position:relative}.display-top{display:flex;justify-content:space-between;color:var(--mint);font:9px 'DM Mono',monospace;letter-spacing:.12em}.freq{display:flex;align-items:baseline;gap:7px;color:#bafbe5;margin:10px 0 4px;font:400 clamp(2.7rem,5vw,4.2rem)/1 'DM Mono',monospace;letter-spacing:-.07em;text-shadow:0 0 18px #8df8d344}.freq small{font-size:12px;letter-spacing:.1em}.station{font:10px 'DM Mono',monospace;letter-spacing:.14em;color:#bafbe5;min-height:16px}.wave{width:100%;height:55px;display:block;margin-top:12px}.dial-labels{display:flex;justify-content:space-between;color:#9b9387;font:8px 'DM Mono',monospace;margin:7px 0 2px}.tuner{width:100%;accent-color:var(--mint);cursor:ew-resize;margin:8px 0}.scale{height:15px;background:repeating-linear-gradient(90deg,#e2d1a1 0 1px,transparent 1px 8px);opacity:.7;position:relative;margin:4px 1px 14px}.scale:after{content:"";position:absolute;left:var(--needle,17%);top:-5px;height:25px;width:2px;background:var(--red);box-shadow:0 0 8px #ff765f88;transition:left .12s}.controls{display:flex;gap:9px;align-items:center}.ctrl{border:1px solid #ffffff2a;background:#282733;color:#e7dece;padding:11px 13px;font:9px 'DM Mono',monospace;letter-spacing:.08em;transition:.2s}.ctrl:hover{border-color:var(--mint);color:var(--mint)}.ctrl.tune{background:var(--red);color:#211516;border-color:var(--red);font-weight:500}.knob{margin-left:auto;width:47px;height:47px;border-radius:50%;border:1px solid #73675b;background:repeating-conic-gradient(from 0deg,#34303a 0deg 8deg,#25232d 8deg 15deg);box-shadow:inset 0 0 0 5px #17161e,0 3px 5px #0008;position:relative}.knob:after{content:"";position:absolute;height:13px;width:3px;background:var(--mint);top:5px;left:calc(50% - 1.5px);border-radius:2px;transform:rotate(var(--turn,0deg));transform-origin:50% 18px}.radio-foot{display:flex;justify-content:space-between;gap:10px;margin-top:15px;font:8px 'DM Mono',monospace;letter-spacing:.12em;color:#847d78}
-section{padding:76px 0;border-top:1px solid var(--line)}.section-top{display:grid;grid-template-columns:145px 1fr;gap:25px;margin-bottom:32px}.section-number{color:var(--red);padding-top:8px}.section-top h2{font:400 clamp(2.5rem,5vw,4.8rem)/.98 'Playfair Display',serif;letter-spacing:-.05em;margin:0}.section-top h2 em{color:var(--lilac)}.desc{max-width:590px;color:var(--muted);font-size:14px;line-height:1.9;margin:16px 0 0}
-.transmission{display:none;grid-template-columns:.85fr 1.15fr;border:1px solid #ffffff24;background:#181821;min-height:255px;margin-top:23px;animation:in .4s ease}.transmission.show{display:grid}@keyframes in{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}.art{min-height:255px;position:relative;overflow:hidden;background:linear-gradient(#26374a,#304654 70%,#101922)}.art:before{content:"";position:absolute;width:95px;height:95px;left:calc(50% - 47px);top:35px;border-radius:50%;background:#eee2ca;box-shadow:0 0 32px #f9e3c033}.art.rain:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(105deg,transparent 0 17px,#c3e4f355 18px 19px,transparent 20px 32px),linear-gradient(transparent 45%,#1b2938)}.art.sea{background:linear-gradient(#091a31,#0b4147 80%,#0d222d)}.art.sea:after{content:"";position:absolute;inset:56% -5% -10%;border-radius:50% 50% 0 0;background:repeating-linear-gradient(0deg,#0c3944 0 10px,#9cffe677 11px 12px,#0a2737 13px 24px);box-shadow:0 -16px 35px #9cffe622}.art.mountain{background:linear-gradient(#322845,#796982 63%,#101a2c)}.art.mountain:after{content:"";position:absolute;inset:45% -5% -5%;background:#151a2e;clip-path:polygon(0 100%,0 62%,23% 9%,38% 59%,56% 0,82% 60%,100% 26%,100% 100%)}.art-label{position:absolute;bottom:15px;left:16px;color:#f3ece0;z-index:2;font:8px 'DM Mono',monospace;letter-spacing:.14em}.trans-copy{padding:clamp(22px,4vw,40px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start}.trans-copy .eyebrow{color:var(--mint)}.trans-copy h3{font:400 clamp(1.8rem,3.5vw,3rem)/1 'Playfair Display',serif;margin:14px 0}.trans-copy p{color:#b9b7c8;font-size:13px;line-height:1.9}.decode{border:1px solid #9cf3d975;color:var(--mint);background:#9cf3d90b;padding:11px 13px;font:9px 'DM Mono',monospace;letter-spacing:.12em}.decoded{display:none;color:var(--cream)!important;border-left:1px solid var(--red);padding:10px 0 10px 14px}.decoded.show{display:block;animation:in .4s}
-.letter{display:grid;grid-template-columns:.7fr 1.3fr;background:#191821;border:1px solid #ffffff24}.letter-side{padding:30px;border-right:1px solid #ffffff20;background:radial-gradient(ellipse at 20% 15%,#65495944,transparent 60%)}.letter-side .big-moon{font-size:40px;color:var(--lilac)}.letter-side h3{font:400 35px/1 'Playfair Display',serif;margin:20px 0}.letter-side p{font:9px/1.8 'DM Mono',monospace;letter-spacing:.1em;color:#a39eb2}.letter-body{padding:clamp(25px,4vw,45px)}.letter-body p{font-size:14px;line-height:2;color:#c3c1d0}.letter-body strong{color:var(--mint);font-weight:400}.signature{font:italic 19px 'Playfair Display',serif;color:var(--lilac)!important;margin-bottom:0}.end{text-align:center;padding:105px 0 90px}.end .dial-icon{font-size:37px;color:var(--red);text-shadow:0 0 32px #ff765f45}.end h2{font:400 clamp(2.7rem,6vw,5.7rem)/.97 'Playfair Display',serif;letter-spacing:-.05em;max-width:780px;margin:22px auto}.end h2 em{color:var(--mint)}.end p{max-width:540px;margin:18px auto 25px;font-size:14px;line-height:1.9;color:var(--muted)}.endbutton{border:1px solid var(--red);background:var(--red);color:#211516;padding:13px 17px;font:10px 'DM Mono',monospace;letter-spacing:.1em}footer{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;border-top:1px solid var(--line);padding:23px 0 30px;color:#777687;font:8px 'DM Mono',monospace;letter-spacing:.13em}.toast{position:fixed;left:50%;bottom:20px;z-index:20;transform:translate(-50%,20px);opacity:0;transition:.25s;pointer-events:none;background:var(--mint);color:#101c1b;padding:12px 16px;font:9px 'DM Mono',monospace;max-width:90vw;text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}
-@media(max-width:800px){.hero{grid-template-columns:1fr;gap:35px;padding:48px 0 58px}.radio-wrap{width:min(540px,100%);margin:auto;transform:none}.section-top{grid-template-columns:1fr;gap:9px}.transmission.show{grid-template-columns:1fr}.art{min-height:215px}.letter{grid-template-columns:1fr}.letter-side{border-right:0;border-bottom:1px solid #ffffff20}.section{padding:60px 0}.radio{padding:13px}.top{gap:12px}.top .live{font-size:8px}.brand{font-size:8px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+:root{
+  --night:#080e19;--ink:#f7f1e9;--muted:#a8b2c4;--cyan:#8df2dd;
+  --blue:#78b8f4;--rose:#f3b1c7;--gold:#f4d8a0;--panel:#111b2a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--night);color:var(--ink);font-family:Georgia,"Times New Roman",serif;overflow-x:hidden}
+button{font:inherit;cursor:pointer}
+a{color:inherit}
+#sky{position:fixed;inset:0;width:100%;height:100%;z-index:-3}
+.aurora{position:fixed;inset:-20%;z-index:-2;pointer-events:none;background:radial-gradient(ellipse at 14% 22%,#1f4f5960,transparent 35%),radial-gradient(ellipse at 80% 72%,#34275d77,transparent 37%),radial-gradient(ellipse at 53% 2%,#32597833,transparent 34%);filter:blur(8px)}
+.grain{position:fixed;inset:0;z-index:10;pointer-events:none;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E")}
+.shell{width:min(1080px,92vw);margin:auto}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:24px 0;color:var(--muted);font:11px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.18em}
+.brand{color:var(--cyan)}.status{display:flex;align-items:center;gap:9px}.dot{display:inline-block;width:6px;height:6px;background:var(--cyan);border-radius:50%;box-shadow:0 0 12px var(--cyan)}
+.hero{min-height:calc(100svh - 70px);display:grid;align-items:center;padding:36px 0 90px;position:relative}
+.hero-inner{max-width:780px}
+.kicker{font:11px/1.5 ui-monospace,monospace;text-transform:uppercase;letter-spacing:.22em;color:var(--cyan)}
+h1{font-size:clamp(3rem,8.5vw,7.9rem);line-height:.89;letter-spacing:-.065em;font-weight:400;margin:24px 0 26px}
+h1 em{font-weight:400;color:var(--cyan)}
+.intro{font-size:clamp(1.1rem,2.2vw,1.35rem);line-height:1.8;color:#c6ceda;max-width:590px}
+.intro strong{color:var(--ink);font-weight:400}
+.hero-bottom{display:flex;align-items:center;gap:25px;flex-wrap:wrap;margin-top:36px}
+.btn{border:1px solid #d6e5e72c;border-radius:3px;background:#101b29c9;color:var(--ink);padding:14px 18px;transition:.25s;letter-spacing:.02em}
+.btn:hover{border-color:var(--cyan);transform:translateY(-2px);background:#162b38}
+.btn.primary{background:var(--cyan);color:#092019;border-color:var(--cyan)}
+.btn.primary:hover{background:#b5ffec}
+.small-note{font:10px/1.8 ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:#8290a3}
+.ticket{position:absolute;right:2%;top:22%;width:235px;padding:22px 20px 18px;color:#15212c;background:#e9e0cf;transform:rotate(5deg);box-shadow:12px 20px 50px #0007;clip-path:polygon(0 0,100% 0,100% 46%,96% 50%,100% 54%,100% 100%,0 100%,0 54%,4% 50%,0 46%)}
+.ticket .t-label{font:9px ui-monospace,monospace;letter-spacing:.17em;text-transform:uppercase;opacity:.65}
+.ticket .ticket-name{font-size:30px;margin:12px 0 3px;letter-spacing:-.04em}
+.ticket .route{font:10px/1.8 ui-monospace,monospace;margin-top:14px;border-top:1px dashed #39495877;padding-top:12px}
+.ticket .barcode{height:24px;margin-top:15px;background:repeating-linear-gradient(90deg,#172733 0 2px,transparent 2px 4px,#172733 4px 5px,transparent 5px 8px)}
+.ticket .ticket-foot{display:flex;justify-content:space-between;font:8px ui-monospace,monospace;margin-top:6px}
+section{padding:95px 0;position:relative}
+.section-head{display:grid;grid-template-columns:120px 1fr;gap:22px;margin-bottom:35px;align-items:start}
+.index{color:var(--cyan);font:11px ui-monospace,monospace;letter-spacing:.12em;padding-top:10px}
+h2{font-size:clamp(2.2rem,5vw,4.5rem);font-weight:400;line-height:.98;letter-spacing:-.05em;margin:0}
+.section-lede{max-width:620px;color:var(--muted);font-size:1.1rem;line-height:1.8;margin-top:18px}
+.routeboard{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.routeboard .route{min-height:270px;position:relative;overflow:hidden;padding:22px;text-align:left;color:var(--ink);border:1px solid #ffffff22;background:#101a28;border-radius:2px;display:flex;flex-direction:column;justify-content:space-between;transition:.3s}
+.routeboard .route:hover,.routeboard .route.chosen{transform:translateY(-4px);border-color:var(--cyan);box-shadow:0 14px 48px #0003}
+.routeboard .route:focus-visible,.btn:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.routeboard .route .n{font:10px ui-monospace,monospace;letter-spacing:.17em;color:var(--cyan)}
+.routeboard .route h3{font-size:clamp(1.5rem,2.8vw,2rem);font-weight:400;line-height:1.05;margin:10px 0}
+.routeboard .route p{font-size:14px;line-height:1.6;color:#aeb9c8;max-width:230px;margin:0}
+.routeboard .route .go{font:10px ui-monospace,monospace;text-transform:uppercase;letter-spacing:.13em;margin-top:25px;color:var(--gold)}
+.scene-art{position:absolute;right:-12px;top:33px;width:128px;height:120px;opacity:.92;pointer-events:none}
+.routeboard .route:nth-child(1){background:linear-gradient(145deg,#1a2d42,#111825 75%)}
+.routeboard .route:nth-child(2){background:linear-gradient(145deg,#102b32,#101923 75%)}
+.routeboard .route:nth-child(3){background:linear-gradient(145deg,#302540,#141827 75%)}
+.route-foot{margin-top:17px;display:flex;gap:8px;align-items:center;color:#7f8da0;font:10px ui-monospace,monospace;letter-spacing:.08em}
+.line{height:1px;flex:1;background:#ffffff22}
+.journey{display:none;margin-top:32px;border:1px solid #ffffff28;background:#0d1623;min-height:380px;position:relative;overflow:hidden}
+.journey.active{display:grid;grid-template-columns:.94fr 1.06fr;animation:appear .7s ease both}
+@keyframes appear{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+.journey-visual{position:relative;min-height:380px;overflow:hidden;background:#132b3b}
+.journey-copy{padding:clamp(24px,4.5vw,48px);display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.journey-copy .chapter{font:10px ui-monospace,monospace;color:var(--cyan);letter-spacing:.18em;text-transform:uppercase}
+.journey-copy h3{font-size:clamp(2rem,4vw,3.4rem);font-weight:400;line-height:.98;letter-spacing:-.04em;margin:19px 0}
+.journey-copy p{line-height:1.85;color:#b7c2d0;margin:0 0 18px;font-size:1.04rem}
+.hidden-note{display:none;border-left:2px solid var(--cyan);padding:10px 0 10px 16px;color:#f3eadc;line-height:1.8;margin:4px 0 22px}
+.hidden-note.revealed{display:block;animation:appear .6s}
+.discover{border:1px solid #ffffff35;background:#142534;color:#e5f5f2;padding:12px 15px;border-radius:2px}
+.discover:hover{border-color:var(--cyan)}
+.journey-controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.scene-label{position:absolute;left:20px;bottom:18px;font:9px ui-monospace,monospace;letter-spacing:.18em;text-transform:uppercase;color:#e0e9ecaa}
+.art-rain{background:linear-gradient(#12243a,#344a60 60%,#10202b)}
+.art-sea{background:linear-gradient(#091c32,#143a49 60%,#071c2b)}
+.art-mountain{background:linear-gradient(#262343,#62516b 58%,#172638)}
+.art-rain:before{content:"";position:absolute;width:130px;height:130px;border-radius:50%;background:#f7ead1;box-shadow:0 0 35px #f7ead155;top:53px;left:calc(50% - 65px)}
+.art-rain:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(104deg,transparent 0 24px,#aed4ed77 25px,#aed4ed77 26px,transparent 27px 45px);opacity:.48}
+.art-sea:before{content:"";position:absolute;width:110px;height:110px;border-radius:50%;background:#f1e6c4;top:38px;left:calc(50% - 55px);box-shadow:0 0 45px #a8eddd66}
+.art-sea:after{content:"";position:absolute;left:-10%;right:-10%;height:55%;bottom:-8%;border-radius:50% 50% 0 0;background:repeating-linear-gradient(0deg,#113f4c 0 12px,#3cd9c577 13px 14px,#153742 15px 24px);box-shadow:0 -20px 35px #50e3d322}
+.art-mountain:before{content:"";position:absolute;width:120px;height:120px;border-radius:50%;background:#d9c3f6;box-shadow:0 0 44px #c5a8f766;right:26px;top:35px}
+.art-mountain:after{content:"";position:absolute;inset:34% -10% -5% -10%;background:#151a30;clip-path:polygon(0 100%,0 65%,22% 15%,36% 57%,52% 0,82% 62%,100% 25%,100% 100%);box-shadow:inset 0 15px 30px #cdb7e5}
+.art-rain .mist{position:absolute;z-index:2;left:-20%;right:-20%;bottom:0;height:25%;background:linear-gradient(transparent,#9eb8c522);filter:blur(8px)}
+.art-sea .glow{position:absolute;z-index:2;inset:0;background:radial-gradient(ellipse at 30% 75%,#8df2dd77,transparent 5%),radial-gradient(ellipse at 53% 84%,#8df2dd88,transparent 5%),radial-gradient(ellipse at 76% 72%,#8df2dd77,transparent 4%),radial-gradient(ellipse at 63% 91%,#8df2dd99,transparent 5%);animation:pulse 3s ease-in-out infinite alternate}
+@keyframes pulse{to{opacity:.35;transform:scale(1.04)}}
+.art-mountain .stars{position:absolute;z-index:3;inset:0;background-image:radial-gradient(#fff 1px,transparent 1.8px),radial-gradient(#c9bfff 1px,transparent 1.8px);background-size:53px 51px,83px 79px;background-position:8px 20px,31px 5px;opacity:.5}
+.postcard{margin-top:14px;border:1px solid #ffffff1f;display:grid;grid-template-columns:1fr 1fr;background:#0d1521}
+.postcard .post-left{padding:27px 30px;border-right:1px dashed #ffffff26}
+.postcard .post-right{padding:27px 30px;display:flex;flex-direction:column;justify-content:space-between;gap:28px}
+.postcard h3{font-size:1.6rem;font-weight:400;margin:0 0 12px}
+.postcard p{color:var(--muted);line-height:1.8;margin:0}
+.stamp{align-self:flex-end;border:1px solid #b4dcd166;color:var(--cyan);padding:13px 10px;font:9px/1.5 ui-monospace,monospace;text-align:center;transform:rotate(7deg);letter-spacing:.12em}
+.reveal-button{width:100%;text-align:left;padding:18px 0;background:none;border:0;border-top:1px solid #ffffff25;color:var(--ink);display:flex;justify-content:space-between;gap:16px}
+.reveal-button span:last-child{color:var(--cyan)}
+#letter{display:none;font-size:1.08rem;line-height:2;color:#e8e5df;white-space:pre-line;margin-top:25px;animation:appear .8s}
+#letter.visible{display:block}
+.signature{color:var(--cyan);font-style:italic}
+.ending{text-align:center;padding:120px 0 90px}
+.ending .symbol{font-size:42px;color:var(--cyan);margin-bottom:24px}
+.ending h2{font-size:clamp(2.5rem,7vw,6rem);max-width:800px;margin:20px auto}
+.ending p{max-width:560px;color:var(--muted);line-height:1.9;margin:22px auto}
+footer{padding:28px 0 35px;border-top:1px solid #ffffff17;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#748195;font:9px ui-monospace,monospace;text-transform:uppercase;letter-spacing:.12em}
+.toast{position:fixed;z-index:20;bottom:24px;left:50%;transform:translate(-50%,20px);opacity:0;transition:.35s;pointer-events:none;padding:13px 18px;background:#d8f8ee;color:#132521;font:12px ui-monospace,monospace;max-width:90vw;text-align:center;box-shadow:0 8px 30px #0005}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+#lightCursor{position:fixed;width:170px;height:170px;border-radius:50%;pointer-events:none;z-index:-1;background:radial-gradient(circle,#72d9d61a,transparent 68%);transform:translate(-50%,-50%)}
+@media(max-width:800px){.ticket{position:relative;top:auto;right:auto;margin:30px 0 0 8px;width:215px;transform:rotate(3deg)}.hero{padding-top:24px;min-height:unset}.hero-inner{padding-top:20px}.section-head{grid-template-columns:1fr;gap:10px}.routeboard{grid-template-columns:1fr}.routeboard .route{min-height:205px}.scene-art{width:112px;height:104px}.journey.active{grid-template-columns:1fr}.journey-visual{min-height:290px}.postcard{grid-template-columns:1fr}.postcard .post-left{border-right:0;border-bottom:1px dashed #ffffff26}.hero-bottom{align-items:flex-start}.ticket{margin-left:auto;margin-right:10px}.intro{max-width:100%}section{padding:72px 0}.journey-copy{padding:28px 24px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
+<canvas id="sky" aria-hidden="true"></canvas><div class="aurora"></div><div class="grain"></div><div id="lightCursor"></div>
 <div class="shell">
-<header class="top"><div class="brand mono"><span class="brand-mark">⌁</span> AFTERHOURS FM <span style="color:#696579">/ 01</span></div><div class="live mono"><i></i> TRANSMITTING SOMEWHERE</div></header>
+<header class="topbar"><div class="brand">Night Line <span style="color:#637388">/</span> No. 03</div><div class="status"><i class="dot"></i> Running on moonlight</div></header>
 <main>
-<section class="hero">
-<div><div class="eyebrow mono">A PRIVATE BROADCAST · FOR ONE LISTENER</div><h1>Hey Trixiee.<br>Can you hear<br><em>the little things?</em></h1><p class="intro">Somewhere between the rain, the sea, and the mountains, there is a frequency for the things that are hard to say in an ordinary message. This station is broadcasting just for you.</p><p class="intro">On the mic: <strong>Neel, a.k.a. your Lambo.</strong><br>On the other end: one very particular human.</p><div class="tagline">Turn the dial slowly.<br>Some signals are shy.</div></div>
-<div class="radio-wrap"><div class="radio"><div class="radio-head"><span>AFTERHOURS / MODEL 001</span><span class="brand-stamp">● ON AIR</span></div><div class="display"><div class="display-top"><span id="displayCode">SCANNING THE QUIET</span><span id="signal">SIGNAL 12%</span></div><div class="freq"><span id="frequency">88.0</span><small>FM</small></div><div class="station" id="station">SEARCHING FOR A LITTLE WONDER...</div><canvas class="wave" id="wave" height="55"></canvas></div><div class="dial-labels"><span>88.0 / STATIC</span><span>98.0 / SOMEWHERE</span><span>108.0 / DREAMS</span></div><input id="tuner" class="tuner" type="range" min="880" max="1080" value="880" step="1" aria-label="Tune the radio frequency"><div class="scale" id="scale"></div><div class="controls"><button class="ctrl tune" id="scan">SCAN FOR SIGNAL ↗</button><button class="ctrl" id="reset">RESET</button><div class="knob" id="knob"></div></div><div class="radio-foot"><span>STEREO / SOFT FEELINGS</span><span>NO ADS · JUST CARE</span></div></div></div>
+<section class="hero" id="begin">
+<div class="hero-inner">
+<div class="kicker">A small, unlisted journey · passenger: one-of-one</div>
+<h1>Somewhere<br>between <em>the rain</em><br>and the stars.</h1>
+<p class="intro">Dear Trixiee — this is not a website with a point to prove. It's a little night train with no rush, no timetable to keep, and a few places I thought you might like to see.</p>
+<p class="intro" style="font-size:1rem;color:#8694a8">A tiny thought from <strong>Lambo</strong>, made for <strong>Pragyna</strong>. Take the window seat.</p>
+<div class="hero-bottom"><button class="btn primary" onclick="document.getElementById('routes').scrollIntoView({behavior:'smooth'})">Board the night line ↗</button><span class="small-note">No tickets needed.<br>Just a little curiosity.</span></div>
+</div>
+<div class="ticket" aria-label="A personalized train ticket">
+<div class="t-label">The after-hours railway</div>
+<div class="ticket-name">Trixiee.</div>
+<div style="font:italic 13px Georgia;color:#52616b">one passenger, no destination</div>
+<div class="route">FROM: THE EVERYDAY<br>TO: SOMEWHERE THAT GLOWS<br>DEPARTURE: RIGHT NOW<br>SEAT: BY THE WINDOW</div>
+<div class="barcode"></div><div class="ticket-foot"><span>NEEL / LAMBO</span><span>✦ 0003</span></div>
+</div>
 </section>
-<section id="frequencies"><div class="section-top"><div class="section-number mono">01 / THE DIAL</div><div><h2>Three signals.<br><em>One small secret.</em></h2><p class="desc">Try tuning to 91.4, 98.7, or 104.2 FM. Each frequency carries a different little transmission. When you find one, hold it there and listen.</p></div></div>
-<div class="transmission" id="transmission"><div class="art rain" id="art"><div class="art-label" id="artLabel">TRANSMISSION 01 / RAINLINE</div></div><div class="trans-copy"><div class="eyebrow mono" id="transMeta">91.4 FM / THE SOFT HOURS</div><h3 id="transTitle">For the days that rain.</h3><p id="transText"></p><button class="decode" id="decode">DECODE THE QUIET PART +</button><p class="decoded" id="decoded"></p></div></div></section>
-<section id="letterSection"><div class="section-top"><div class="section-number mono">02 / SIGNED OFF</div><div><h2>One last transmission.<br><em>From Lambo, honestly.</em></h2><p class="desc">No dramatic music, no big question at the end. Just something I'd like you to know.</p></div></div>
-<div class="letter"><div class="letter-side"><div class="big-moon">☾</div><h3>Dear<br>Pragyna,</h3><p>FREQUENCY: ALWAYS A LITTLE GRATEFUL<br>ENCRYPTION: NONE NEEDED<br>INTENDED RECIPIENT: YOU</p></div><div class="letter-body"><p>I wanted to make you something that feels a bit like finding a radio station in the middle of the night—something you weren't looking for, but somehow needed to hear.</p><p>I don't know that every meaningful bond needs a perfect label. Some people just make the world feel warmer, funnier, stranger in the best way. I'm glad <strong>you're one of those people in my life.</strong></p><p>I hope you find your own kind of glowing coastline. I hope the rain lets you rest, the mountains remind you how far you've come, and life keeps surprising you with reasons to be excited about what's next.</p><p>That's the whole broadcast. No perfect reply required. If it made you smile for even a second, I'm happy it reached you.</p><p class="signature">With care, always — Neel / Lambo ✦</p></div></div></section>
-<section class="end"><div class="dial-icon">⌁</div><div class="eyebrow mono">END OF TRANSMISSION</div><h2>Some signals are quiet.<br><em>They still find their way.</em></h2><p>Thanks for tuning in, Trixiee. The station will be right here whenever you feel like coming back.</p><button class="endbutton" id="backToRadio">RETURN TO THE DIAL ↑</button></section>
+
+<section id="routes">
+<div class="section-head"><div class="index">01 / CHOOSE</div><div><h2>Three stops.<br>Pick the weather.</h2><p class="section-lede">Every place has a different kind of quiet. Choose whichever feels like you today. There isn't a right answer—only a different little story.</p></div></div>
+<div class="routeboard">
+<button class="route" data-route="rain" onclick="openRoute('rain',this)">
+<span class="n">STOP 01 — THE SOFT HOURS</span><svg class="scene-art" viewBox="0 0 130 120" aria-hidden="true"><circle cx="75" cy="39" r="25" fill="#f1e5c8" opacity=".9"/><path d="M0 90 Q35 75 62 93 T130 86 V120 H0Z" fill="#263e50"/><path d="M10 5L2 33 M35 10L26 40 M110 4L101 32 M90 67L81 94" stroke="#a5d6e8" stroke-width="2" opacity=".6"/><path d="M0 103Q35 96 65 106T130 102" fill="none" stroke="#9dc8d3" opacity=".6"/></svg>
+<div><h3>Rain on<br>the window</h3><p>For the nights when the world is loud and your thoughts need somewhere gentle to land.</p><div class="go">Enter the rain ↗</div></div>
+</button>
+<button class="route" data-route="sea" onclick="openRoute('sea',this)">
+<span class="n">STOP 02 — THE BLUE DARK</span><svg class="scene-art" viewBox="0 0 130 120" aria-hidden="true"><circle cx="80" cy="30" r="22" fill="#f6e5bd"/><path d="M0 74Q18 65 38 74T76 74T130 74V120H0Z" fill="#104751"/><path d="M0 80Q18 72 38 80T76 80T130 80 M0 93Q18 84 38 93T76 93T130 93 M0 106Q18 98 38 106T76 106T130 106" stroke="#80f4db" stroke-width="2" fill="none" opacity=".9"/><g fill="#a0ffe9"><circle cx="19" cy="85" r="2"/><circle cx="54" cy="100" r="2"/><circle cx="101" cy="89" r="2"/><circle cx="75" cy="112" r="2.5"/></g></svg>
+<div><h3>The shore<br>that glows</h3><p>For the kind of magic that doesn't announce itself. It just lights up when you get close.</p><div class="go">Follow the tide ↗</div></div>
+</button>
+<button class="route" data-route="mountain" onclick="openRoute('mountain',this)">
+<span class="n">STOP 03 — ABOVE THE NOISE</span><svg class="scene-art" viewBox="0 0 130 120" aria-hidden="true"><circle cx="87" cy="27" r="22" fill="#d8c6f2"/><path d="M0 120L0 74 31 39 62 86 79 55 130 110V120Z" fill="#302d4c"/><path d="M31 39L23 49 30 47 36 53 39 48Z M79 55L72 67 79 63 86 71 89 64Z" fill="#e8e1f1" opacity=".8"/><path d="M0 104L47 84 74 104 104 77 130 94V120H0Z" fill="#1a2539"/></svg>
+<div><h3>Above<br>the clouds</h3><p>For remembering that you are more than the weight of one difficult day.</p><div class="go">Take the high road ↗</div></div>
+</button>
+</div>
+<div class="route-foot"><span>LOCAL TIME: YOURS</span><div class="line"></div><span>DELAY: NEVER</span></div>
+<div class="journey" id="journey" aria-live="polite">
+<div class="journey-visual art-rain" id="sceneVisual"><div class="mist"></div><div class="scene-label" id="sceneLabel">STOP 01 / RAIN ON THE WINDOW</div></div>
+<div class="journey-copy"><div class="chapter" id="sceneChapter">FIELD NOTE 01 / THE SOFT HOURS</div><h3 id="sceneTitle">Let the rain<br>say it for you.</h3><p id="sceneText">Some days don't need a solution straight away. Sometimes all you need is a window, a little rain, and permission not to have everything figured out.</p><button class="discover" id="discover" onclick="revealFieldNote()">Find the hidden note +</button><div class="hidden-note" id="fieldNote"></div><div class="journey-controls"><button class="btn" onclick="chooseAnother()">Choose another stop</button><button class="btn primary" onclick="document.getElementById('postcard').scrollIntoView({behavior:'smooth'})">Continue the journey ↓</button></div></div>
+</div>
+</section>
+
+<section id="postcard">
+<div class="section-head"><div class="index">02 / KEEP</div><div><h2>A postcard from<br>nowhere in particular.</h2><p class="section-lede">The best places aren't always places on a map. Sometimes they're a song, an unexpected laugh, a person who makes an ordinary Tuesday feel like a story worth remembering.</p></div></div>
+<div class="postcard">
+<div class="post-left"><div class="kicker" style="font-size:9px">POSTCARD 0003 · NEVER SENT BY POST</div><h3>Dear Pragyna,</h3><p>There are a thousand beautiful things in the world that don't ask to be noticed. The moon doesn't ask the sea to glow. The mountains don't ask the clouds to stay. They just keep being what they are—and somehow, that's enough to make a person stop and look.</p><br><p>I think there is something lovely about people like that, too.</p></div>
+<div class="post-right"><p>Keep this somewhere in the back of your mind: <span style="color:var(--cyan)">you don't have to become more extraordinary to be worth appreciating.</span> You already bring your own kind of light. Even on the days you can't see it yourself.</p><div class="stamp">DELIVER TO:<br>TRIXIEE<br><span style="font-size:18px">✦ ☾ ✦</span><br>RIGHT WHERE YOU ARE</div></div>
+</div>
+</section>
+
+<section id="letterSection">
+<div class="section-head"><div class="index">03 / UNFOLD</div><div><h2>One thing the<br>night asked me to say.</h2><p class="section-lede">Not a grand confession. Not a question you have to answer. Just something honest, from one human to another.</p></div></div>
+<button class="reveal-button" onclick="toggleLetter()"><span>Open the envelope from Lambo</span><span id="letterArrow">＋</span></button>
+<div id="letter">Hey Trixiee,
+
+I wanted to make you something you wouldn't just read and forget in three seconds. Something with little corners to explore, because the people who matter to us deserve more than a copy-paste message.
+
+I don't know the perfect word for every kind of bond, and maybe we don't need to force one onto ours. I just know I'm glad you're in my world. I like that you're you — not some polished, always-happy version of you, but the real person who has good days, strange days, quiet days, and days when everything feels like too much.
+
+I hope life gives you places that feel like moonlight on water. People around whom you can exhale. Mountains that remind you how far you've come. Rain that washes the noise away. And, when the world feels dim, a small unexpected glow that reminds you there is still wonder here.
+
+And if this little page gave you even one real smile, then the hours spent making it were worth it.
+
+No pressure to say anything perfect back. No hidden test. Just a little piece of care, left here for you to find.
+
+<span class="signature">— Neel. Your Lambo. ☾</span></div>
+</section>
+
+<section class="ending">
+<div class="symbol">☾</div>
+<div class="kicker">END OF LINE · NOT THE END OF THE NIGHT</div>
+<h2>Some lights don't need to be loud to be unforgettable.</h2>
+<p>Keep the ticket. Revisit a stop whenever you need a breath. And remember, Trixiee: the world is bigger than the hard moments, and there is still so much beautiful, unexpected light left to find.</p>
+<button class="btn primary" onclick="window.scrollTo({top:0,behavior:'smooth'});showToast('Your ticket is still valid, Trixiee. Always. ☾')">Keep this ticket ✦</button>
+</section>
 </main>
-<footer><span>AFTERHOURS FM · PRIVATE BROADCAST NO. 001</span><span>NEEL / LAMBO → PRAGYNA / TRIXIEE</span><span>MADE WITH NO EXPECTATIONS</span></footer>
-</div><div id="toast" class="toast" role="status"></div>
+<footer><span>THE NIGHT LINE · BUILT FOR TRIXIEE</span><span>WITH CARE, FROM NEEL / LAMBO</span><span>NO DESTINATION REQUIRED</span></footer>
+</div>
+<div class="toast" id="toast" role="status"></div>
 <script>
-const stations=[
-{f:914,code:'RAINLINE / 01',name:'91.4 FM · THE SOFT HOURS',meta:'91.4 FM / THE SOFT HOURS',title:'For the days that rain.',art:'rain',label:'TRANSMISSION 01 / RAINLINE',text:'When the sky gets heavy, it never apologises for raining. Maybe you do not need to apologise for having hard days, either.',secret:'Trixiee, you do not have to be the brightest version of yourself every day. You can pause, change your mind, feel a little lost, and still be worthy of every good thing coming your way.'},
-{f:987,code:'BLUE LIGHT / 02',name:'98.7 FM · THE GLOWING SHORE',meta:'98.7 FM / THE BLUE WILD',title:'The ocean kept a light for you.',art:'sea',label:'TRANSMISSION 02 / BLUE LIGHT',text:'Some shorelines glow only when the waves move. In the dark, the smallest motion can make the whole ocean look alive.',secret:'You do not need to have everything figured out to be becoming someone wonderful. Keep moving at your pace. Some kinds of light only appear after you have started.'},
-{f:1042,code:'HIGH COUNTRY / 03',name:'104.2 FM · ABOVE THE NOISE',meta:'104.2 FM / THE LONG VIEW',title:'A reminder from the mountains.',art:'mountain',label:'TRANSMISSION 03 / HIGH COUNTRY',text:'From up high, the things that felt like the whole world become one part of a much wider view. This moment is not the whole story.',secret:'Look how far you have already come, Pragyna. You do not need to see the whole road to take the next kind step. I hope your future gives you beautiful reasons to be proud of yourself.'}
-];
-const tuner=document.getElementById('tuner'),freq=document.getElementById('frequency'),station=document.getElementById('station'),signal=document.getElementById('signal'),displayCode=document.getElementById('displayCode'),scale=document.getElementById('scale'),knob=document.getElementById('knob'),trans=document.getElementById('transmission');let active=null,toastTimer;
-function tune(){const v=+tuner.value,f=v/10;freq.textContent=f.toFixed(1);scale.style.setProperty('--needle',((v-880)/200*100)+'%');knob.style.setProperty('--turn',((v-880)/200*250)+'deg');let found=null,dist=99;stations.forEach(s=>{const d=Math.abs(s.f-v);if(d<dist){dist=d;found=s}});if(dist<=7){active=found;displayCode.textContent=found.code;station.textContent=found.name;signal.textContent='SIGNAL '+Math.round(94-dist*3)+'%';signal.style.color='var(--mint)';if(trans.dataset.station!==String(found.f)){renderStation(found)}document.getElementById('wave').style.opacity='1'}else{active=null;displayCode.textContent='SCANNING THE QUIET';station.textContent=f<90?'STATIC… KEEP LISTENING':'SEARCHING FOR A LITTLE WONDER...';signal.textContent='SIGNAL '+(Math.max(4,Math.round(28-Math.abs(f-98)*2)))+'%';signal.style.color='#a5d6c5';trans.classList.remove('show');trans.dataset.station='';document.getElementById('wave').style.opacity='.28'}}
-function renderStation(s){trans.dataset.station=String(s.f);document.getElementById('art').className='art '+s.art;document.getElementById('artLabel').textContent=s.label;document.getElementById('transMeta').textContent=s.meta;document.getElementById('transTitle').textContent=s.title;document.getElementById('transText').textContent=s.text;document.getElementById('decoded').textContent=s.secret;document.getElementById('decoded').classList.remove('show');document.getElementById('decode').style.display='inline-block';document.getElementById('decode').textContent='DECODE THE QUIET PART +';trans.classList.add('show');toast('Signal locked. A little message has arrived. ✦')}
-tuner.addEventListener('input',tune);document.getElementById('scan').addEventListener('click',()=>{const next=stations.find(s=>s.f>+tuner.value+7)||stations[0];tuner.value=next.f;tune();trans.scrollIntoView({behavior:'smooth',block:'center'})});document.getElementById('reset').addEventListener('click',()=>{tuner.value=880;tune();toast('Back to the static. Take your time.')});document.getElementById('decode').addEventListener('click',()=>{const d=document.getElementById('decoded');d.classList.add('show');document.getElementById('decode').style.display='none'});document.getElementById('backToRadio').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
-const canvas=document.getElementById('wave'),ctx=canvas.getContext('2d');let phase=0;function drawWave(){const w=canvas.clientWidth,h=canvas.clientHeight,dpr=devicePixelRatio||1;if(canvas.width!==Math.round(w*dpr)||canvas.height!==Math.round(h*dpr)){canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr)}ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);ctx.strokeStyle='#9cf3d9';ctx.lineWidth=1;ctx.beginPath();for(let px=0;px<w;px++){const amp=active?12:2.6;const y=h/2+Math.sin(px*.07+phase)*amp*Math.sin(px/w*Math.PI)*(.7+.3*Math.sin(phase*.4));if(px===0)ctx.moveTo(px,y);else ctx.lineTo(px,y)}ctx.stroke();phase+=.08;requestAnimationFrame(drawWave)}drawWave();function toast(s){const el=document.getElementById('toast');el.textContent=s;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),2400)}tune();
-</script></body></html>
+const c=document.getElementById('sky'),x=c.getContext('2d');let stars=[],w=innerWidth,h=innerHeight;
+function resize(){w=innerWidth;h=innerHeight;c.width=w*devicePixelRatio;c.height=h*devicePixelRatio;c.style.width=w+'px';c.style.height=h+'px';x.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);stars=Array.from({length:Math.min(170,Math.floor(w/7))},()=>({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.15+.15,a:Math.random()*.7+.15,p:Math.random()*6.28,s:Math.random()*.12+.02}))}
+function draw(){x.clearRect(0,0,w,h);for(const s of stars){s.p+=.009;s.y-=s.s;if(s.y<-2){s.y=h+2;s.x=Math.random()*w}x.globalAlpha=s.a*(.72+.28*Math.sin(s.p));x.fillStyle='#e4f6f4';x.beginPath();x.arc(s.x,s.y,s.r,0,Math.PI*2);x.fill()}x.globalAlpha=1;requestAnimationFrame(draw)}
+resize();draw();addEventListener('resize',resize);
+const cur=document.getElementById('lightCursor');addEventListener('pointermove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});
+const data={
+rain:{cls:'art-rain',label:'STOP 01 / RAIN ON THE WINDOW',chapter:'FIELD NOTE 01 / THE SOFT HOURS',title:'Let the rain<br>say it for you.',text:'Some days don’t need a solution straight away. Sometimes all you need is a window, a little rain, and permission not to have everything figured out.',note:'A note for Trixiee: you are allowed to pause. You are allowed to change your mind. You are allowed to be a work in progress without treating yourself like a problem to solve.'},
+sea:{cls:'art-sea',label:'STOP 02 / THE SHORE THAT GLOWS',chapter:'FIELD NOTE 02 / THE BLUE DARK',title:'Some magic only<br>shows up close.',text:'Bioluminescent waves can look like the ocean is holding a piece of the sky. The glow comes alive when the water moves. A quiet reminder that change can reveal beauty, too.',note:'A note for Trixiee: you don’t have to shine every minute to be someone luminous. You can be still, unsure, or tired. Your worth is not measured by how brightly you perform for the world.'},
+mountain:{cls:'art-mountain',label:'STOP 03 / ABOVE THE CLOUDS',chapter:'FIELD NOTE 03 / THE LONG VIEW',title:'Look how far<br>you’ve already come.',text:'Mountains make everything feel small in the kindest possible way. The urgent things grow quieter. The horizon gets wider. You remember that one hard chapter is not the whole story.',note:'A note for Trixiee: one day you will look back at things that feel enormous right now and realise you made it through them one small step at a time. Until then, take the next step, not the whole mountain.'}
+};let current=null;
+function openRoute(k,el){current=k;document.querySelectorAll('.route[data-route]').forEach(b=>b.classList.toggle('chosen',b===el));const d=data[k],v=document.getElementById('sceneVisual');v.className='journey-visual '+d.cls;v.innerHTML=(k==='rain'?'<div class="mist"></div>':k==='sea'?'<div class="glow"></div>':'<div class="stars"></div>')+'<div class="scene-label">'+d.label+'</div>';document.getElementById('sceneChapter').textContent=d.chapter;document.getElementById('sceneTitle').innerHTML=d.title;document.getElementById('sceneText').textContent=d.text;document.getElementById('fieldNote').textContent=d.note;document.getElementById('fieldNote').classList.remove('revealed');document.getElementById('discover').style.display='inline-block';document.getElementById('discover').textContent='Find the hidden note +';const panel=document.getElementById('journey');panel.classList.add('active');setTimeout(()=>panel.scrollIntoView({behavior:'smooth',block:'center'}),60)}
+function revealFieldNote(){document.getElementById('fieldNote').classList.add('revealed');document.getElementById('discover').textContent='Note found ✓';document.getElementById('discover').style.display='none';showToast(['Some things are worth saying gently.','A tiny glow, just for you.','One step is still progress.'][['rain','sea','mountain'].indexOf(current)])}
+function chooseAnother(){document.getElementById('routes').scrollIntoView({behavior:'smooth'});document.querySelectorAll('.route[data-route]').forEach(b=>b.classList.remove('chosen'))}
+function toggleLetter(){const l=document.getElementById('letter');l.classList.toggle('visible');document.getElementById('letterArrow').textContent=l.classList.contains('visible')?'−':'＋';if(l.classList.contains('visible')){showToast('A letter, with no reply required. ☾');setTimeout(()=>l.scrollIntoView({behavior:'smooth',block:'nearest'}),50)}}
+let toastTimer;function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),2600)}
+</script>
+</body>
+</html>
