@@ -27,6 +27,7 @@ jobs:
           cp -R the-night-line _site/the-night-line
           cp -R trixiee-world _site/trixiee-world
           cp -R the-1111-club _site/the-1111-club
+          cp -R the-blue-hour _site/the-blue-hour
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload site files
