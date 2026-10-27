@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#131c32">
+<title>TRIXIEE.EXE — Personal Operating System</title>
+<style>
+#txos{font-family:'Courier New',monospace;background:#d9d8ce;color:#202426;border:2px solid #fff;box-shadow:inset 1px 1px #888,0 8px 28px #0002}
+#txos *{box-sizing:border-box}#txos button{font:inherit;cursor:pointer}#txos button:focus-visible{outline:2px dashed #ff5a94;outline-offset:3px}
+#txos .tx-screen{min-height:530px;position:relative;overflow:hidden;background:#c7c9be}
+#txos .tx-boot{min-height:530px;background:#131c32;color:#d8f7c5;padding:25px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;overflow:hidden}
+#txos .tx-boot:before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 3px,#ffffff05 4px)}
+#txos .tx-bootinner{max-width:430px;position:relative}.tx-pixels{font-size:34px;margin-bottom:22px}
+#txos .tx-logo{font-weight:bold;font-size:clamp(30px,7vw,52px);letter-spacing:-.08em;color:#d8f7c5;text-shadow:3px 3px #3e8f82}
+#txos .tx-pink{color:#ff9bc0}#txos .tx-good{color:#d8f7c5}#txos .tx-subtitle{font-size:12px;line-height:1.8;color:#b8d6d0}
+#txos .tx-console{border:1px solid #526a72;padding:14px;text-align:left;margin-top:25px;font-size:10px;line-height:2}
+#txos .tx-intro{margin-top:22px;font-size:12px;line-height:1.8;color:#b8d6d0}#txos .tx-intro strong{color:white;font-size:15px}
+#txos .tx-start{border:2px solid #d8f7c5;background:#d8f7c5;color:#14202e;padding:12px 18px;margin-top:17px;font-weight:bold;font-size:12px}
+#txos .tx-start:hover{background:#ffb6d0;border-color:#ffb6d0}#txos .tx-warning{color:#ff9bc0;font-size:9px;margin-top:15px}
+#txos .tx-desktop{display:none;min-height:550px;position:relative;padding:15px;background-color:#d9d8ce;background-image:linear-gradient(#00000009 1px,transparent 1px),linear-gradient(90deg,#00000009 1px,transparent 1px);background-size:20px 20px}
+#txos .tx-desktop.active{display:block;animation:txfade .3s ease}@keyframes txfade{from{opacity:0}to{opacity:1}}
+#txos .tx-top{display:flex;justify-content:space-between;align-items:center;gap:10px;background:#25375d;color:#fff;padding:9px 11px;font-size:10px;box-shadow:2px 2px #777;position:relative;z-index:1}#txos .tx-top strong{color:#d8f7c5}
+#txos .tx-wallpaper{position:absolute;inset:63px 0 33px;pointer-events:none;background:radial-gradient(ellipse at 78% 23%,#f1a9c160,transparent 29%),radial-gradient(ellipse at 25% 65%,#86b9aa79,transparent 35%),linear-gradient(140deg,#c6c9ba,#e6c6b8 60%,#a7c9bd);opacity:.75}
+#txos .tx-wallpaper:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,#ffffff14 0 1px,transparent 1px 4px)}
+#txos .tx-desknote{position:absolute;right:22px;top:98px;color:#25375d;font-size:10px;text-align:right;line-height:1.7;max-width:150px;z-index:1}#txos .tx-desknote span{color:#b54f78}
+#txos .tx-icons{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;width:min(370px,100%);margin-top:23px}
+#txos .tx-icon{border:1px solid transparent;background:#f5f0e255;color:#202426;padding:9px 4px 8px;display:flex;align-items:center;gap:6px;flex-direction:column;min-height:82px;font-size:9px;text-align:center;text-shadow:0 1px #ffffff}
+#txos .tx-icon:hover,#txos .tx-icon:focus{background:#fff9;border:1px dashed #25375d}#txos .tx-emoji{font-size:27px;line-height:1.15;text-shadow:none}
+#txos .tx-taskbar{position:absolute;z-index:5;bottom:0;left:0;right:0;display:flex;align-items:center;gap:7px;padding:6px;background:#d9d8ce;border-top:2px solid white;box-shadow:inset 0 1px #aaa;min-height:34px}
+#txos .tx-startmenu-btn{background:#d9d8ce;border:2px outset white;color:#202426;padding:6px 8px;font-size:10px;font-weight:bold}
+#txos .tx-tasktext{font-size:9px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;color:#444}#txos .tx-clock{font-size:9px;border:1px inset white;padding:5px}
+#txos .tx-window{display:none;position:absolute;z-index:3;left:50%;top:50%;transform:translate(-50%,-50%);width:min(480px,calc(100% - 22px));max-height:calc(100% - 90px);overflow:auto;background:#f3f0e7;border:2px solid white;box-shadow:3px 3px #34415d,inset 1px 1px #fff;color:#222}
+#txos .tx-window.open{display:block;animation:txfade .2s ease}
+#txos .tx-wtitle{position:sticky;top:0;z-index:2;background:#25375d;color:white;display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 9px;font-size:10px}
+#txos .tx-x{background:#d9d8ce;color:#111;border:1px outset white;width:22px;height:21px;font-weight:bold}
+#txos .tx-wbody{padding:17px}#txos .tx-wbody h3{font-size:22px;letter-spacing:-.07em;margin:4px 0 12px;font-weight:bold}
+#txos .tx-wbody p{font-size:11px;line-height:1.85;color:#535852}
+#txos .tx-label{font-size:9px;letter-spacing:.12em;color:#69766d;text-transform:uppercase}
+#txos .tx-action{background:#25375d;color:white;border:2px outset #d8d7cc;padding:9px 12px;font-size:10px;margin:5px 4px 4px 0}
+#txos .tx-action:hover{background:#3a527e}#txos .tx-action.pink{background:#ee9db7;color:#34203a}#txos .tx-action.green{background:#d8f7c5;color:#20302d}
+#txos .tx-options{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0}
+#txos .tx-option{background:#e4e4d8;border:1px solid #b7b8ae;padding:9px 10px;font-size:10px;color:#25292a}
+#txos .tx-option:hover{background:#f6d4df;border-color:#d4779c}
+#txos .tx-output{display:none;padding:12px;background:#e3e9d9;border-left:3px solid #678c76;font-size:11px;line-height:1.8;margin-top:12px;color:#273b32}
+#txos .tx-output.show{display:block;animation:txfade .3s}
+#txos .tx-award{border:1px dashed #8f9b8f;background:#fffdf4;padding:13px;margin:9px 0;font-size:11px;line-height:1.8}#txos .tx-award b{color:#314c65}
+#txos .tx-input{width:100%;padding:10px;border:1px inset #888;background:white;font:12px 'Courier New',monospace;margin:8px 0;color:#252525}
+#txos .tx-secret{display:none;margin-top:13px;padding:14px;background:#223b3a;color:#e5f7de;line-height:1.9;font-size:11px}#txos .tx-secret.show{display:block}
+#txos .tx-quest{font-size:12px;line-height:1.8;color:#27332e;background:#e4edda;padding:13px;margin:10px 0;border:1px dashed #9eaf91}
+#txos .tx-letter{border:1px dashed #aaa;padding:14px;margin-top:12px;background:#e9e6dc;font-size:11px;line-height:1.9;color:#32392f}
+#txos .tx-seal{display:inline-block;border:1px dashed #bd7190;color:#a04e70;padding:3px 5px;font-size:8px;transform:rotate(-4deg)}
+#txos .tx-startmenu{position:absolute;bottom:37px;left:7px;z-index:8;background:#e9e6dc;border:2px outset white;width:205px;padding:13px;display:none;box-shadow:3px 3px #444}
+#txos .tx-startmenu.show{display:block}#txos .tx-startmenu button{display:block;text-align:left;border:0;background:transparent;width:100%;padding:9px 4px;font-size:10px;color:#252525}
+#txos .tx-startmenu button:hover{background:#25375d;color:white}#txos .tx-menutitle{font-weight:bold;font-size:15px;color:#25375d;padding:4px 4px 8px;border-bottom:1px solid #aaa}#txos .tx-menutitle span{color:#c75c85}
+#txos .tx-bottom{background:#25375d;color:#dce6d7;font-size:9px;line-height:1.75;padding:11px 15px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+@media(min-width:560px){#txos .tx-screen{min-height:620px}#txos .tx-boot{min-height:620px}#txos .tx-desktop{min-height:620px}#txos .tx-icons{grid-template-columns:repeat(2,96px);gap:9px;margin-top:25px}#txos .tx-icon{min-height:86px}#txos .tx-window{max-height:calc(100% - 100px)}#txos .tx-desknote{top:110px;right:28px;font-size:12px}}
+@media(prefers-reduced-motion:reduce){#txos *{animation:none!important;transition:none!important}}
+</style>
+
+</head>
+<body>
+<main id="txos">
+  <div class="tx-screen">
+    <section class="tx-boot" id="txboot">
+      <div class="tx-bootinner">
+        <div class="tx-pixels" aria-hidden="true">▣ ◈ ▣</div>
+        <div class="tx-logo">TRIXIEE<span class="tx-pink">.EXE</span></div>
+        <p class="tx-subtitle">PERSONAL OPERATING SYSTEM · BUILD 01.∞</p>
+        <div class="tx-console" aria-label="System startup messages">
+          <div>&gt; initializing tiny universe...</div><div>&gt; loading inside jokes [maybe]</div><div>&gt; checking human worth...</div><div class="tx-pink">&gt; ERROR: worth cannot be measured.</div><div>&gt; replacing error with appreciation.</div><div class="tx-good">&gt; READY. one special user detected.</div>
+        </div>
+        <p class="tx-intro">This little machine was made for<br><strong>Pragyna, aka Trixiee.</strong><br>Authorized by: Neel, aka Lambo.</p>
+        <button class="tx-start" id="tx-power">[ POWER ON ]</button>
+        <div class="tx-warning">WARNING: may cause unexpected smiling.</div>
+      </div>
+    </section>
+    <section class="tx-desktop" id="txdesk" aria-label="Trixiee personal desktop">
+      <div class="tx-wallpaper"></div>
+      <header class="tx-top"><span>▣ <strong>TRIXIEE.EXE</strong> — personal desktop</span><span>MEM: UNLIMITED ♡</span></header>
+      <div class="tx-desknote">HELLO, TRIXIEE.<br>YOUR DAY IS LOADING.<br><span>PLEASE BE GENTLE WITH YOURSELF.</span></div>
+      <div class="tx-icons">
+        <button class="tx-icon" data-open="mood"><span class="tx-emoji">🎛️</span><span>mood_machine.exe</span></button>
+        <button class="tx-icon" data-open="achieve"><span class="tx-emoji">🏆</span><span>trophy_cabinet</span></button>
+        <button class="tx-icon" data-open="quest"><span class="tx-emoji">🕹️</span><span>side_quest.exe</span></button>
+        <button class="tx-icon" data-open="draft"><span class="tx-emoji">📁</span><span>lambo_files</span></button>
+        <button class="tx-icon" data-open="vault"><span class="tx-emoji">🔒</span><span>classified_stuff</span></button>
+        <button class="tx-icon" data-open="dont"><span class="tx-emoji">🚫</span><span>do_not_click.txt</span></button>
+      </div>
+      <div class="tx-window" id="txwin-mood"><div class="tx-wtitle"><span>🎛️ MOOD_MACHINE.EXE — select current weather</span><button class="tx-x" data-close="mood" aria-label="Close">×</button></div><div class="tx-wbody"><div class="tx-label">INPUT REQUIRED · no judgement detected</div><h3>How's the human today?</h3><p>Pick whichever is closest. You don't have to pretend your battery is at 100% here.</p><div class="tx-options"><button class="tx-option" data-mood="low">🪫 2% battery</button><button class="tx-option" data-mood="chaos">🌀 47 tabs open</button><button class="tx-option" data-mood="sun">✨ main character</button><button class="tx-option" data-mood="unsure">☁️ can't tell yet</button></div><div class="tx-output" id="txmoodout" aria-live="polite"></div></div></div>
+      <div class="tx-window" id="txwin-achieve"><div class="tx-wtitle"><span>🏆 TROPHY CABINET — achievements unlocked</span><button class="tx-x" data-close="achieve" aria-label="Close">×</button></div><div class="tx-wbody"><div class="tx-label">YOUR RECORD IS IMPRESSIVE, ACTUALLY</div><h3>Things you might forget to give yourself credit for.</h3><div class="tx-award">🏅 <b>Kept Going Anyway</b><br>For getting through days that didn't come with instructions.</div><div class="tx-award">🎖️ <b>Unapologetically Human</b><br>For being a person, not a productivity machine.</div><div class="tx-award">💿 <b>One of One</b><br>For being Trixiee. No replacement available.</div><button class="tx-action pink" id="tx-award">Generate one more award</button><div class="tx-output" id="txawardout"></div></div></div>
+      <div class="tx-window" id="txwin-quest"><div class="tx-wtitle"><span>🕹️ SIDE_QUEST.EXE — optional missions</span><button class="tx-x" data-close="quest" aria-label="Close">×</button></div><div class="tx-wbody"><div class="tx-label">NO XP REQUIRED · NO DEADLINES</div><h3>Your next tiny side quest.</h3><p>Real life is the main story. This is just a little bonus level.</p><div id="txquesttext" class="tx-quest">Press GENERATE QUEST to receive a tiny mission from the universe.</div><button class="tx-action" id="tx-newquest">Generate quest ↻</button><button class="tx-action green" id="tx-completequest">Quest completed ✓</button><div id="txquestout" class="tx-output" aria-live="polite"></div></div></div>
+      <div class="tx-window" id="txwin-draft"><div class="tx-wtitle"><span>📁 LAMBO_FILES — one unsent note</span><button class="tx-x" data-close="draft" aria-label="Close">×</button></div><div class="tx-wbody"><span class="tx-seal">PERSONAL / NOT A PERFORMANCE REVIEW</span><h3>A file I wanted you to have.</h3><p>Some people are easy to appreciate in a sentence, but hard to explain in one. This file isn't a confession or a question. It's just me making sure the nice thing doesn't stay unsaid.</p><div class="tx-letter">To: Pragyna (Trixiee)<br>From: Neel (Lambo)<br>Subject: Your presence has been noted.<br><br>I am genuinely glad that our paths crossed. I hope you get the kind of happiness where you don't need to overthink whether you deserve it. I hope you laugh until your stomach hurts, find people who listen properly, and make a life that feels like yours.<br><br>And for the record, the world got a pretty interesting human when it got you. That's all. No reply required. ♡</div></div></div>
+      <div class="tx-window" id="txwin-vault"><div class="tx-wtitle"><span>🔒 CLASSIFIED_STUFF — restricted folder</span><button class="tx-x" data-close="vault" aria-label="Close">×</button></div><div class="tx-wbody"><div class="tx-label">SECURITY QUESTION</div><h3>Who is this tiny universe for?</h3><p>Hint: the answer is the name at the top of this desktop. Type it as you like.</p><input class="tx-input" id="txpass" placeholder="enter the secret name..." maxlength="40"><button class="tx-action" id="tx-unlock">Unlock folder ↗</button><div id="txvaultout" class="tx-output" aria-live="polite"></div><div id="txsecret" class="tx-secret">🔓 SECRET FILE 001<br><br>Dear Trixiee,<br><br>In a world where everyone is trying to be more impressive, more successful, or more put-together, I hope you always remember you are allowed to just be a person. You can be uncertain. You can change. You can need help. You can take up space without apologizing for it.<br><br>Some of my favourite people are the ones who make life feel a little less like a performance. I'm glad I know you.<br><br>— Lambo 💚</div></div></div>
+      <div class="tx-window" id="txwin-dont"><div class="tx-wtitle"><span>🚫 DO_NOT_CLICK.TXT</span><button class="tx-x" data-close="dont" aria-label="Close">×</button></div><div class="tx-wbody"><div class="tx-label">SYSTEM WARNING</div><h3>Absolutely nothing interesting here.</h3><p>Seriously. Boring file. Probably just 800 lines of terms and conditions.</p><button class="tx-action pink" id="tx-dont">I accept the danger</button><div id="txdontout" class="tx-output"></div></div></div>
+      <nav class="tx-startmenu" id="txmenu"><div class="tx-menutitle">TRIXIEE<span>.EXE</span></div><button data-menu-open="mood">🎛️ Mood machine</button><button data-menu-open="quest">🕹️ Random side quest</button><button data-menu-open="draft">📁 Read a note from Lambo</button><button id="tx-backdesk">↩ Back to desktop</button></nav>
+      <footer class="tx-taskbar"><button class="tx-startmenu-btn" id="tx-menu-btn">▣ start</button><span id="txstatus" class="tx-tasktext">System ready. Please be yourself.</span><span class="tx-clock">♡ 100%</span></footer>
+    </section>
+  </div>
+  <footer class="tx-bottom"><span>TRIXIEE OS · UNOFFICIAL RELEASE</span><span>BUILT BY LAMBO WITH ♥</span><span>NO UPDATE REQUIRED</span></footer>
+</main>
+<script>
+(() => {
+  const root = document.getElementById("txos");
+  if (!root) return;
+  const $ = (id) => document.getElementById(id);
+  const status = (message) => { $("txstatus").textContent = message; };
+  const open = (name) => {
+    root.querySelectorAll(".tx-window").forEach((win) => win.classList.remove("open"));
+    const target = $("txwin-" + name);
+    if (target) target.classList.add("open");
+    $("txmenu").classList.remove("show");
+    status("Opened " + name + ".exe");
+  };
+  const close = (name) => {
+    $("txwin-" + name)?.classList.remove("open");
+    status("Back at desktop. Take your time.");
+  };
+  const closeAll = () => root.querySelectorAll(".tx-window").forEach((win) => win.classList.remove("open"));
+  const output = (id, message, html = false) => {
+    const el = $(id);
+    if (!el) return;
+    if (html) el.innerHTML = message;
+    else el.textContent = message;
+    el.classList.add("show");
+  };
+
+  $("tx-power").addEventListener("click", () => {
+    $("txboot").style.display = "none";
+    $("txdesk").classList.add("active");
+    status("System ready. Please be yourself.");
+  });
+  root.querySelectorAll("[data-open]").forEach((button) => button.addEventListener("click", () => open(button.dataset.open)));
+  root.querySelectorAll("[data-close]").forEach((button) => button.addEventListener("click", () => close(button.dataset.close)));
+  root.querySelectorAll("[data-menu-open]").forEach((button) => button.addEventListener("click", () => open(button.dataset.menuOpen)));
+  $("tx-menu-btn").addEventListener("click", () => $("txmenu").classList.toggle("show"));
+  $("tx-backdesk").addEventListener("click", () => {
+    $("txmenu").classList.remove("show");
+    closeAll();
+    status("Desktop restored. All is well.");
+  });
+
+  const moods = {
+    low: "Low battery mode enabled. Cancel any unnecessary guilt. You have permission to rest, eat something, and reply to messages when you can. You are not a phone that owes everyone 24/7 uptime. 🔋",
+    chaos: "47 tabs is a lot, honestly. Close the ones that are only playing the imaginary argument soundtrack. One thing at a time, Trixiee. Nobody is grading your brain. 🌀",
+    sun: "MAIN CHARACTER DETECTED. Please proceed with confidence, excellent snacks, and a soundtrack. Side characters are not permitted to ruin the plot today. ✨",
+    unsure: "No need to name every feeling immediately. Let the weather be weather for a while. You can understand yourself slowly. ☁️"
+  };
+  root.querySelectorAll("[data-mood]").forEach((button) => button.addEventListener("click", () => {
+    output("txmoodout", moods[button.dataset.mood]);
+    status("Mood machine: care mode enabled.");
+  }));
+
+  const awards = [
+    ["✨", "Professional Vibe Improver", "For making an ordinary chat a little more interesting."],
+    ["🧠", "Quietly Strong", "For all the things you handled that nobody saw."],
+    ["🦋", "Allowed to Evolve", "For being able to change your mind and still be yourself."],
+    ["💖", "Cannot Be Duplicated", "There is no second Trixiee. System confirms."]
+  ];
+  let awardIndex = 0;
+  $("tx-award").addEventListener("click", () => {
+    const [icon, name, description] = awards[awardIndex % awards.length];
+    awardIndex += 1;
+    output("txawardout", "<b>" + icon + " " + name + "</b><br>" + description, true);
+    status("New achievement added to Trixiee’s record.");
+  });
+
+  const quests = [
+    ["THE WATER QUEST", "Drink a glass of water like it is a premium potion. Hydration +10."],
+    ["THE WINDOW QUEST", "Look away from your screen and find one thing outside worth noticing."],
+    ["THE MUSIC QUEST", "Play a song you loved once and see if it still knows the way back."],
+    ["THE KINDNESS QUEST", "Say one nice thing to yourself without immediately making a joke to cancel it."],
+    ["THE TINY JOY QUEST", "Find a snack, a meme, or a five-minute break. This is important research."],
+    ["THE MAIN CHARACTER QUEST", "Walk into the next room like the soundtrack just changed. No explanation needed."],
+    ["THE CONNECTION QUEST", "Send someone you miss a simple hello. No essay required."],
+    ["THE REST QUEST", "Take ten minutes where being productive is not the assignment."]
+  ];
+  let currentQuest = -1;
+  $("tx-newquest").addEventListener("click", () => {
+    let next = Math.floor(Math.random() * quests.length);
+    if (quests.length > 1 && next === currentQuest) next = (next + 1) % quests.length;
+    currentQuest = next;
+    const [title, description] = quests[currentQuest];
+    $("txquesttext").innerHTML = "<b>" + title + "</b><br>" + description;
+    $("txquestout").classList.remove("show");
+    status("Quest generated. Difficulty: delightfully easy.");
+  });
+  $("tx-completequest").addEventListener("click", () => {
+    output("txquestout", currentQuest < 0
+      ? "No active quest detected. Generate one first!"
+      : "QUEST COMPLETE ✓ Achievement unlocked: You made a little room for yourself. Reward: absolutely no pressure to do another one.");
+    status("Quest completed. XP: good enough.");
+  });
+
+  const unlock = () => {
+    const answer = $("txpass").value.trim().toLowerCase().replace(/[^a-z]/g, "");
+    if (answer === "trixiee" || answer === "pragyna") {
+      $("txsecret").classList.add("show");
+      output("txvaultout", "Identity confirmed. Welcome home, Trixiee.");
+      status("Classified file unlocked. Handle with care.");
+    } else {
+      output("txvaultout", "Access denied. Hint: the adorable nickname on the desktop might help. Try again!");
+    }
+  };
+  $("tx-unlock").addEventListener("click", unlock);
+  $("txpass").addEventListener("keydown", (event) => { if (event.key === "Enter") unlock(); });
+
+  $("tx-dont").addEventListener("click", () => {
+    output("txdontout",
+      "<b>⚠ CRITICAL DISCOVERY</b><br><br>You clicked it.<br>The file contained one (1) extremely important fact:<br><br><span style='color:#a74d73;font-size:13px'>YOU ARE KIND OF A BIG DEAL, TRIXIEE.</span><br><br>System will now pretend this was a security test.",
+      true
+    );
+    status("Suspicious file opened. Compliment delivered.");
+  });
+})();
+</script>
+</body>
+</html>
