@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#06162b">
+<title>The Blue Hour — A Living Ocean for Trixiee</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main id="ocean" class="ocean">
+  <canvas id="sea-canvas" aria-label="Animated bioluminescent underwater scene"></canvas>
+  <div class="water-grain" aria-hidden="true"></div>
+  <div class="water-vignette" aria-hidden="true"></div>
+  <div class="surface-light" aria-hidden="true"></div>
+  <div class="distant-moon" aria-hidden="true"><span></span></div>
+  <div class="sea-glow glow-a" aria-hidden="true"></div>
+  <div class="sea-glow glow-b" aria-hidden="true"></div>
+  <div class="sea-glow glow-c" aria-hidden="true"></div>
+  <div class="caustics" aria-hidden="true"></div>
+
+  <header class="hud">
+    <a class="sigil" href="#ocean" aria-label="The Blue Hour home"><span>✳</span><span class="sigil-word">THE BLUE HOUR<small>A SMALL OCEAN FOR TRIXIEE</small></span></a>
+    <div class="hud-right"><span class="live-dot"></span><span id="phase-label">DEPTH 011 · MIDNIGHT BLUE</span><button id="sound-toggle" class="sound-toggle" aria-label="Toggle ambient sound" title="Toggle ambient sound">SOUND <span id="sound-state">OFF</span></button></div>
+  </header>
+
+  <section class="scene-copy" id="scene-copy">
+    <p class="pre-title"><span class="tiny-star">✦</span> A PLACE BETWEEN THE LAST THOUGHT AND THE NEXT</p>
+    <h1>Stay a little.<br><em>The world can</em><br><span class="title-glow">wait here.</span></h1>
+    <p class="subcopy">Somewhere beneath the noise, there is a quiet ocean that glows when you get close. Nothing to solve. Nothing to prove. Just a little wonder, moving at your speed.</p>
+    <button id="dive-button" class="dive-button"><span class="button-icon">↓</span><span>ENTER THE BLUE</span><span class="button-arrow">↘</span></button>
+    <div class="quiet-note"><span>✧</span> NO RUSH. THE TIDE IS ON YOUR SIDE.</div>
+  </section>
+
+  <div class="jelly jelly-large" aria-hidden="true">
+    <svg viewBox="0 0 260 300" role="presentation">
+      <defs><radialGradient id="bellA" cx="45%" cy="24%" r="80%"><stop offset="0" stop-color="#f5e8ff" stop-opacity=".9"/><stop offset=".28" stop-color="#a8dfff" stop-opacity=".62"/><stop offset=".65" stop-color="#7f9eff" stop-opacity=".28"/><stop offset="1" stop-color="#82f6f1" stop-opacity=".03"/></radialGradient><linearGradient id="tentA"><stop stop-color="#c9eeff" stop-opacity="0"/><stop offset=".48" stop-color="#b0f9f5" stop-opacity=".85"/><stop offset="1" stop-color="#baa7ff" stop-opacity=".14"/></linearGradient><filter id="blurA"><feGaussianBlur stdDeviation="4"/></filter></defs>
+      <ellipse cx="130" cy="100" rx="106" ry="83" fill="#a5d7ff" opacity=".14" filter="url(#blurA)"/>
+      <path d="M24 111 C29 48 68 19 130 16 C192 19 231 48 236 111 Q215 126 194 113 Q173 138 153 114 Q130 137 106 114 Q83 133 63 113 Q43 125 24 111Z" fill="url(#bellA)" stroke="#d7f2ff" stroke-opacity=".58" stroke-width="1.3"/>
+      <path d="M39 91 Q130 42 221 91 M58 108 Q130 74 202 108" fill="none" stroke="#e8f7ff" stroke-opacity=".5"/>
+      <path d="M76 116 C75 164 53 176 62 229 S54 265 51 285 M98 119 C112 165 84 198 102 239 S96 268 103 295 M121 121 C134 165 123 203 133 242 S126 275 130 299 M148 120 C150 162 176 195 159 238 S171 272 167 290 M170 118 C193 158 200 183 187 225 S205 265 203 290 M191 115 C215 149 221 180 213 201" fill="none" stroke="url(#tentA)" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M76 116 C75 164 53 176 62 229 S54 265 51 285 M121 121 C134 165 123 203 133 242 S126 275 130 299 M170 118 C193 158 200 183 187 225 S205 265 203 290" fill="none" stroke="#b9ffff" stroke-opacity=".56" stroke-width="1"/>
+      <g fill="#f0ffff"><circle cx="84" cy="104" r="2"/><circle cx="106" cy="111" r="2"/><circle cx="131" cy="108" r="2.4"/><circle cx="155" cy="111" r="2"/><circle cx="179" cy="104" r="2"/></g>
+    </svg>
+  </div>
+  <div class="jelly jelly-small" aria-hidden="true">
+    <svg viewBox="0 0 180 220" role="presentation"><defs><radialGradient id="bellB"><stop stop-color="#ffe4f6" stop-opacity=".75"/><stop offset=".5" stop-color="#a8baff" stop-opacity=".4"/><stop offset="1" stop-color="#91ffff" stop-opacity=".02"/></radialGradient></defs><path d="M17 78 C25 23 62 12 90 13 C118 12 155 23 163 78 Q147 92 132 78 Q117 96 102 79 Q90 94 75 79 Q58 94 44 78 Q30 91 17 78Z" fill="url(#bellB)" stroke="#defaff" stroke-opacity=".7"/><path d="M45 82 Q40 120 50 150 T44 208 M67 84 Q80 125 66 160 T72 212 M89 83 Q96 124 89 154 T97 207 M111 84 Q121 123 113 161 T120 209 M134 81 Q149 116 137 148 T147 200" fill="none" stroke="#c9e7ff" stroke-opacity=".68" stroke-width="1.4" stroke-linecap="round"/></svg>
+  </div>
+
+  <div class="whale-shadow" aria-hidden="true"><svg viewBox="0 0 460 170"><path d="M28 91 Q93 27 202 51 Q300 67 358 102 L420 71 L409 111 L449 129 L386 135 Q287 168 181 126 Q93 105 28 91Z" fill="#92bae7" opacity=".12"/><path d="M126 59 Q170 44 214 60" stroke="#deeeff" opacity=".18" fill="none" stroke-width="2"/></svg></div>
+
+  <section class="interaction-layer" id="interaction-layer" aria-label="Interactive ocean">
+    <div class="interaction-top"><span class="interaction-label"><span class="pulse-dot"></span> THE CURRENT IS LISTENING</span><span class="tide-count"><b id="tide-count">00</b><small> / 05 TIDE LIGHTS</small></span></div>
+    <div class="instruction" id="instruction"><span class="finger">✧</span><span>Touch the little lights as they drift past.<br><em>They only glow when someone notices.</em></span></div>
+    <button id="transform-button" class="transform-button" disabled>LET THE OCEAN TURN <span>↗</span></button>
+  </section>
+
+  <div class="depth-line" aria-hidden="true"><span>00 M</span><i></i><span>THE BLUE BETWEEN</span><i></i><span>∞</span></div>
+
+  <div class="dawn-screen" id="dawn-screen" aria-hidden="true">
+    <div class="dawn-ring"></div><div class="dawn-orb"><span>♡</span></div>
+    <div class="dawn-copy">
+      <p class="dawn-overline">A MESSAGE CARRIED UP BY THE TIDE</p>
+      <h2>And there you are.<br><em>Still becoming.</em></h2>
+      <p>You don't have to turn into sunlight to deserve the morning.</p>
+      <button id="open-note" class="open-note">A LITTLE NOTE FOR YOU <span>↗</span></button>
+    </div>
+    <div class="dawn-foot">TAKE THE QUIET WITH YOU. <button id="return-to-water">FLOAT BACK ↺</button></div>
+  </div>
+
+  <div class="note-shade" id="note-shade" hidden>
+    <article class="sea-letter" role="dialog" aria-modal="true" aria-labelledby="note-title">
+      <button class="note-close" id="close-note" aria-label="Close note">×</button>
+      <div class="letter-moon">☾</div>
+      <p class="letter-label">DELIVERED BY THE SOFTEST CURRENT</p>
+      <h2 id="note-title">Dear Trixiee,</h2>
+      <p>Consider this a tiny pocket of the world where you don't have to be anything other than yourself.</p>
+      <p>You can be a work in progress and still be wonderful company. You can have a slow day and still be moving forward. You can change your mind, start again, take the long way, or just float for a little while.</p>
+      <p>I hope you find people and places that feel like exhaling. I hope the things you're quietly wishing for find their way to you. And on days when that feels far away, I hope you remember that you have someone in your corner, rooting for you — loudly, proudly, and with absolutely no chill.</p>
+      <div class="letter-sign">A little light, from Lambo <span>♡</span></div>
+      <div class="letter-stamp">SENT WITH NO EXPIRY DATE ✳</div>
+    </article>
+  </div>
+
+  <footer class="bottom-bar"><span>AN EXPERIMENT IN BEING HERE.</span><span class="footer-center">BUILT FOR THE BLUE HOUR <b>✳</b></span><button id="start-again">FLOAT BACK TO THE BEGINNING ↺</button></footer>
+</main>
+<script src="./app.js"></script>
+</body>
+</html>
