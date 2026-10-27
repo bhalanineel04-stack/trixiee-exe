@@ -25,6 +25,7 @@ jobs:
           cp index.html _site/index.html
           cp .nojekyll _site/.nojekyll
           cp -R the-night-line _site/the-night-line
+          cp -R trixiee-world _site/trixiee-world
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload site files
