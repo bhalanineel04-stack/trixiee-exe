@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#142721">
+<title>THE AFTERHOURS LIBRARY — Study Room</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="ambient-grain" aria-hidden="true"></div>
+<div class="rain-wall" aria-hidden="true"><div class="rain-streaks"></div></div>
+<header class="topbar" id="top">
+  <a href="#top" class="wordmark"><span class="mark">✳</span><span>THE AFTERHOURS LIBRARY<small>A STUDY ROOM THAT GETS IT</small></span></a>
+  <div class="open-status"><span class="status-light"></span> OPEN LATE <i>·</i> OPEN ALWAYS</div>
+  <button class="quiet-toggle" id="quiet-toggle" aria-pressed="false"><span class="quiet-icon">☾</span><span id="quiet-label">QUIET MODE</span><span class="toggle-track"><i></i></span></button>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow"><span>LIBRARY CARD NO. 001</span><span class="eyebrow-rule"></span><span>YOU BELONG HERE</span></p>
+    <h1>The world can<br>wait. <em>The page</em><br><span>is yours.</span></h1>
+    <p class="hero-desc">For the assignments, the almost-understood chapters, the late-night “one more page,” and the days when just showing up is the win.</p>
+    <div class="hero-actions"><button class="primary-button" id="go-study">CLAIM YOUR LITTLE DESK <span>↘</span></button><span class="handwritten">you've got this.<br>even if it feels like you don't. ♡</span></div>
+    <div class="hero-meta"><span>ROOM TEMPERATURE <b>COZY</b></span><span>PRESSURE LEVEL <b>NOPE.</b></span></div>
+  </div>
+  <div class="reading-room" aria-label="Illustration of a cosy library with shelves and a reading desk">
+    <div class="room-topline"><span>READING ROOM / WEST WING</span><span>EST. AFTER HOURS</span></div>
+    <div class="room-art">
+      <div class="window">
+        <div class="window-sky"></div><div class="window-moon"></div><div class="window-cloud cloud-a"></div><div class="window-cloud cloud-b"></div>
+        <div class="window-city city-a"></div><div class="window-city city-b"></div><div class="window-divider"></div>
+        <div class="window-sill"></div>
+      </div>
+      <div class="shelf shelf-top">
+        <div class="book b1"></div><div class="book b2"></div><div class="book b3"></div><div class="book b4"></div><div class="book b5"></div><div class="book b6"></div><div class="plant-pot"><i></i><i></i><i></i></div>
+      </div>
+      <div class="shelf shelf-bottom">
+        <div class="book b7"></div><div class="book b8"></div><div class="book b9"></div><div class="book b10"></div><div class="book b11"></div><div class="book b12"></div><div class="book b13"></div>
+      </div>
+      <div class="desk"><div class="desk-top"></div><div class="desk-leg leg-a"></div><div class="desk-leg leg-b"></div></div>
+      <div class="open-book"><div class="book-page page-left"></div><div class="book-page page-right"></div><div class="book-spine"></div><div class="book-line line-one"></div><div class="book-line line-two"></div><div class="book-line line-three"></div><div class="book-line line-four"></div></div>
+      <div class="lamp"><div class="lamp-shade"></div><div class="lamp-stem"></div><div class="lamp-foot"></div><div class="lamp-pool"></div></div>
+      <div class="mug"><i></i><span>STAY<br>CURIOUS</span></div>
+      <div class="little-note">one thing<br>at a time.</div>
+      <div class="room-plant"><i></i><i></i><i></i><i></i><b></b></div>
+      <div class="room-caption"><span>✳ A SOFT PLACE TO THINK</span><span>DESK 01 — RESERVED FOR YOU</span></div>
+    </div>
+    <div class="room-bottomline"><span>RAIN OUTSIDE / WARM LIGHT INSIDE</span><span>TAKE YOUR TIME <b>↗</b></span></div>
+  </div>
+</section>
+
+<section class="study-section" id="study">
+  <div class="section-label"><span>01 / SETTLE IN</span><span>A LITTLE STRUCTURE, A LOT OF GRACE</span></div>
+  <div class="section-heading"><div><h2>Choose your <em>chapter.</em></h2><p>Pick what you're working on. The library will keep your place.</p></div><div class="library-stamp"><span>THE AFTERHOURS</span><b>✳</b><span>STUDY SOCIETY</span></div></div>
+  <div class="study-layout">
+    <div class="book-collection">
+      <div class="collection-top"><span>THE SUBJECT SHELF</span><span>SELECT A SPINE ↘</span></div>
+      <div class="book-shelf" role="group" aria-label="Choose a subject">
+        <button class="subject-book active book-lit" data-subject="literature" aria-pressed="true"><span class="spine-no">01</span><span class="spine-title">LITERATURE</span><span class="spine-mark">✳</span></button>
+        <button class="subject-book book-math" data-subject="math" aria-pressed="false"><span class="spine-no">02</span><span class="spine-title">MATHEMATICS</span><span class="spine-mark">∑</span></button>
+        <button class="subject-book book-science" data-subject="science" aria-pressed="false"><span class="spine-no">03</span><span class="spine-title">SCIENCE</span><span class="spine-mark">⚛</span></button>
+        <button class="subject-book book-language" data-subject="language" aria-pressed="false"><span class="spine-no">04</span><span class="spine-title">LANGUAGES</span><span class="spine-mark">あ</span></button>
+        <button class="subject-book book-any" data-subject="anything" aria-pressed="false"><span class="spine-no">05</span><span class="spine-title">THE BIG MESS</span><span class="spine-mark">?</span></button>
+        <div class="shelf-ledge"></div>
+      </div>
+      <div class="selected-book-note"><span class="note-star">✳</span><div><span class="note-label">CURRENTLY OPEN</span><b id="selected-subject">Literature & the human condition</b><p id="subject-note">Read a page slowly. Ask what it is trying to tell you, and what it reminds you of.</p></div></div>
+      <div class="daily-prompt"><span class="prompt-label">A QUESTION FOR YOUR MARGINS</span><p id="daily-question">What is one idea from this chapter you want to carry into real life?</p><button id="shuffle-prompt" aria-label="Get another study prompt">ANOTHER PROMPT ↻</button></div>
+    </div>
+
+    <div class="focus-card">
+      <div class="focus-header"><span><i class="focus-dot"></i> YOUR FOCUS DESK</span><span id="focus-status">WAITING FOR YOU</span></div>
+      <div class="focus-subject"><span class="focus-subject-label">NOW STUDYING</span><b id="focus-subject">LITERATURE</b><span class="focus-edition">SESSION / 001</span></div>
+      <div class="timer-wrap">
+        <svg class="timer-ring" viewBox="0 0 240 240" aria-hidden="true"><circle class="ring-track" cx="120" cy="120" r="108"></circle><circle class="ring-progress" id="ring-progress" cx="120" cy="120" r="108"></circle></svg>
+        <div class="timer-center"><span class="timer-caption" id="timer-caption">A LITTLE FOCUS</span><div class="timer-time" id="timer-time">25<span>:00</span></div><span class="timer-subcaption" id="timer-subcaption">ONE PAGE AT A TIME</span></div>
+      </div>
+      <div class="timer-presets" role="group" aria-label="Choose focus session">
+        <button data-minutes="25" class="timer-preset active" aria-pressed="true"><b>25</b><span>FOCUS</span></button>
+        <button data-minutes="5" class="timer-preset" aria-pressed="false"><b>05</b><span>RESET</span></button>
+        <button data-minutes="50" class="timer-preset" aria-pressed="false"><b>50</b><span>DEEP READ</span></button>
+      </div>
+      <div class="timer-actions"><button id="start-timer" class="timer-start"><span>▶</span> START FOCUS</button><button id="reset-timer" class="timer-reset" aria-label="Reset timer">↻</button></div>
+      <div class="focus-footer"><span>NO STREAKS TO LOSE.</span><span>JUST COME BACK. <b>♡</b></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="desk-section">
+  <div class="section-label"><span>02 / THE SCRATCH PAPER</span><span>THOUGHTS ARE ALLOWED TO BE MESSY</span></div>
+  <div class="desk-grid">
+    <div class="notes-copy"><span class="eyebrow"><span>YOUR PERSONAL MARGINS</span></span><h2>Think on<br><em>paper.</em></h2><p>Keep the half-formed idea. Write the question you feel silly asking. Leave yourself a breadcrumb for tomorrow.</p><div class="save-status"><span class="save-dot"></span><span id="save-status">YOUR NOTES STAY ON THIS DEVICE</span></div></div>
+    <div class="notes-paper">
+      <div class="paper-heading"><span>DESK NOTE / PRIVATE</span><span>✳</span><span id="notes-date">TODAY'S MARGINS</span></div>
+      <textarea id="study-notes" oninput="try{localStorage.setItem('afterhours-notes',this.value);document.getElementById('save-status').textContent='AUTOSAVED ON THIS DEVICE';}catch(e){document.getElementById('save-status').textContent='LOCAL STORAGE IS UNAVAILABLE';}" placeholder="Okay, so here's what I'm thinking…&#10;&#10;Things I understand:&#10;— &#10;&#10;Things I want to ask about:&#10;— &#10;&#10;One tiny next step:"></textarea>
+      <div class="paper-footer"><span>NO GRADES FOR THE FIRST DRAFT.</span><button id="clear-notes">CLEAR THIS PAGE ↗</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="ledger-section">
+  <div class="section-label"><span>03 / THE LITTLE LEDGER</span><span>PROGRESS, WITHOUT THE PRESSURE</span></div>
+  <div class="ledger">
+    <div class="ledger-title"><span class="ledger-icon">✳</span><div><h2>Your day, <em>so far.</em></h2><p>Count the time you gave yourself. It all counts.</p></div></div>
+    <div class="ledger-metrics"><div class="metric"><span>FOCUS SESSIONS</span><b id="session-count">00</b><small>finished, not perfect</small></div><div class="metric"><span>MINUTES GIVEN</span><b id="minutes-count">000</b><small>to your future self</small></div><div class="metric"><span>CHAPTERS OPENED</span><b id="chapters-count">01</b><small>curiosity looks good on you</small></div></div>
+    <div class="ledger-end"><span id="ledger-message">THE FIRST PAGE IS ALWAYS THE HARDEST. YOU'RE HERE.</span><button id="reset-ledger">RESET TODAY'S LEDGER ↻</button></div>
+  </div>
+</section>
+
+<footer class="footer"><a href="#top" class="footer-brand">THE AFTERHOURS LIBRARY <span>✳</span></a><span>QUIETLY ROOTING FOR YOU, ALWAYS.</span><button id="back-top">BACK TO YOUR DESK ↑</button></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="focus-overlay" id="focus-overlay" hidden><div class="focus-overlay-card"><span class="overlay-star">✳</span><span class="overlay-label">DISTRACTION-FREE MODE</span><h2>Just you<br>and the <em>page.</em></h2><div class="quiet-clock" id="quiet-clock">25:00</div><div class="quiet-subject" id="quiet-subject">LITERATURE · ONE PAGE AT A TIME</div><p>The rest of the world can wait a little. Your notes are safe on this device.</p><button id="quiet-timer-control">▶ START FOCUS</button><button class="exit-focus-button" id="exit-focus">BACK TO THE LIBRARY ↗</button></div></div>
+<script src="./app.js"></script>
+</main>
+</body>
+</html>

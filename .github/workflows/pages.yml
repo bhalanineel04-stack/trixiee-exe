@@ -29,6 +29,7 @@ jobs:
           cp -R the-1111-club _site/the-1111-club
           cp -R the-blue-hour _site/the-blue-hour
           cp -R the-morning-frequency _site/the-morning-frequency
+          cp -R the-afterhours _site/the-afterhours
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload site files
