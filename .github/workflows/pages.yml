@@ -30,6 +30,7 @@ jobs:
           cp -R the-blue-hour _site/the-blue-hour
           cp -R the-morning-frequency _site/the-morning-frequency
           cp -R the-afterhours _site/the-afterhours
+          cp -R the-lore _site/the-lore
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload site files
