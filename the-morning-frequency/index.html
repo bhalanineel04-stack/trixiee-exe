@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#efe7d5">
+<title>THE MORNING FREQUENCY — A small good morning</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="rain-layer" aria-hidden="true"><canvas id="rain"></canvas></div>
+<div class="paper-grain" aria-hidden="true"></div>
+<header class="topbar">
+  <a class="station-brand" href="#top" aria-label="The Morning Frequency home"><span class="brand-star">✳</span><span>THE MORNING FREQUENCY<small>TRANSMITTING CARE, SINCE RIGHT NOW</small></span></a>
+  <div class="signal-status"><i></i> SIGNAL FOUND <span>FM / 01</span></div>
+  <button class="sound-toggle" id="sound-toggle" aria-pressed="false"><span>♫</span> SOUND <b id="sound-state">OFF</b></button>
+</header>
+
+<main id="top">
+  <section class="opening">
+    <div class="opening-copy">
+      <p class="kicker"><span class="kicker-line"></span> WEDNESDAY MORNING · SPECIAL TRANSMISSION</p>
+      <h1>Good morning,<br><em>my favourite</em><br><span>human.</span></h1>
+      <p class="opening-text">The sky might be making a fuss today. So here's a little frequency from someone who hopes your morning feels softer than the weather outside.</p>
+      <div class="opening-signoff"><span class="tiny-sun">☼</span><span>FOR TRIXIEE, WITH EXTRA CARE.<br><small>FROM THE OTHER SIDE OF THE STATIC — LAMBO</small></span></div>
+    </div>
+    <div class="window-scene" aria-label="A rainy morning window with a warm light inside">
+      <div class="window-label"><span>OUTSIDE, FOR NOW</span><span>RAIN ON GLASS / TAKE IT SLOW</span></div>
+      <div class="window-frame">
+        <div class="window-glass">
+          <div class="dawn-glow"></div><div class="cloud-shape cloud-one"></div><div class="cloud-shape cloud-two"></div>
+          <div class="distant-roof roof-a"></div><div class="distant-roof roof-b"></div><div class="distant-roof roof-c"></div>
+          <div class="window-reflection"></div>
+          <div class="window-scribble">the light<br>will find us.</div>
+          <div class="glass-sticker">✳<small>BE GENTLE</small></div>
+        </div>
+        <div class="frame-cross"></div>
+        <div class="window-sill"><span>☕</span><div class="sill-mug"></div><span class="sill-note">A WARM THING<br>WAITING INSIDE</span></div>
+      </div>
+      <div class="window-caption"><span>NO FORECAST HERE.</span><span>JUST A LITTLE HOPE <b>↘</b></span></div>
+    </div>
+  </section>
+
+  <section class="broadcast-section" id="radio">
+    <div class="section-head"><span>01 / TUNE INTO SOMETHING KIND</span><span>NO STATIC CAN CANCEL THIS.</span></div>
+    <div class="radio-layout">
+      <div class="radio-card">
+        <div class="radio-screws"><i></i><i></i><i></i><i></i></div>
+        <div class="radio-topline"><span>THE LITTLE RADIO CO.</span><span>MODEL 011 / PERSONAL</span></div>
+        <div class="radio-nameplate"><span class="plate-star">✳</span><span>GOOD THINGS<br>ON AIR</span><span class="plate-number">№ 01</span></div>
+        <div class="radio-display">
+          <div class="display-top"><span>NOW RECEIVING</span><span id="display-mode">WARMTH / FM</span></div>
+          <div class="frequency-row"><span class="freq-prefix">FM</span><span class="frequency" id="frequency">91.7</span><span class="freq-unit">MHz</span><span class="tuned-dot"></span></div>
+          <div class="tuner-track"><div class="tuner-scale"><span>88</span><span>92</span><span>96</span><span>100</span><span>104</span><span>108</span></div><div class="tuner-rail"><i id="tuner-marker"></i></div></div>
+          <div class="display-bottom"><span id="station-code">STATION 02 · THE SOFT PLACE</span><span class="stereo">STEREO <b>●</b></span></div>
+        </div>
+        <div class="radio-main">
+          <div class="speaker" aria-hidden="true"><div class="speaker-mesh"></div><div class="speaker-badge">T·F</div></div>
+          <div class="radio-controls">
+            <div class="dial-label"><span>FIND YOUR FREQUENCY</span><span>↻</span></div>
+            <div class="big-dial" id="big-dial" role="slider" tabindex="0" aria-label="Tune radio station" aria-valuemin="0" aria-valuemax="2" aria-valuenow="1">
+              <div class="dial-tick tick-a"></div><div class="dial-tick tick-b"></div><div class="dial-tick tick-c"></div><div class="dial-ring"></div><div class="dial-inner"><span class="dial-pointer"></span><span class="dial-center">✳</span></div>
+            </div>
+            <div class="dial-current"><span>CH 02</span><b id="dial-title">THE SOFT PLACE</b></div>
+          </div>
+        </div>
+        <div class="radio-presets" role="group" aria-label="Choose broadcast">
+          <button class="preset" data-station="0"><span class="preset-no">01</span><span class="preset-name">THE BRAVE LITTLE THING</span><span class="preset-freq">88.6</span></button>
+          <button class="preset active" data-station="1"><span class="preset-no">02</span><span class="preset-name">THE SOFT PLACE</span><span class="preset-freq">91.7</span></button>
+          <button class="preset" data-station="2"><span class="preset-no">03</span><span class="preset-name">A NOTE FOR LATER</span><span class="preset-freq">103.4</span></button>
+        </div>
+        <div class="radio-bottom"><span>BATTERY: FULL OF CARE</span><span>MADE FOR ONE LISTENER <b>♡</b></span></div>
+      </div>
+
+      <div class="broadcast-copy">
+        <p class="kicker"><span class="kicker-line"></span> YOU'RE LISTENING TO</p>
+        <p class="live-tag"><span class="live-pulse"></span><span id="live-tag">ON AIR · STATION 02</span></p>
+        <h2 id="broadcast-title">The soft<br><em>place.</em></h2>
+        <p class="broadcast-text" id="broadcast-text">A reminder that you do not have to make a perfect morning out of an imperfect day. You just have to arrive in it, one small breath at a time.</p>
+        <div class="audio-meter" id="audio-meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <button id="play-broadcast" class="play-button"><span class="play-symbol">▶</span><span>PLAY THIS TRANSMISSION<small id="play-subtitle">A LITTLE REMINDER, JUST FOR YOU</small></span><span class="play-arrow">↗</span></button>
+        <p class="broadcast-footnote">NO NEWS. NO NOISE. JUST SOMETHING NICE TO CARRY INTO THE DAY.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="care-strip">
+    <div class="care-icon">☂</div>
+    <div class="care-copy"><span class="care-label">A LITTLE REAL-WORLD CARE, TOO</span><p>If conditions are severe where you are, please stay indoors, away from windows, and follow official local weather and emergency advisories. The radio can be gentle; the real alerts should always be the source of truth.</p></div>
+    <div class="care-mark">TAKE CARE<br>OUT THERE <span>✳</span></div>
+  </section>
+
+  <section class="final-note">
+    <div class="final-note-top"><span>02 / THE LAST LITTLE MESSAGE</span><span>DELIVERED WITHOUT STATIC</span></div>
+    <div class="final-note-grid">
+      <div class="final-note-heading"><p class="kicker">WHEN THE SONG ENDS</p><h2>Keep a little<br><em>warmth.</em></h2><div class="sun-doodle">☼</div></div>
+      <div class="note-letter">
+        <div class="letter-top"><span>PERSONAL TRANSMISSION / NOT FOR REBROADCAST</span><span>♡</span></div>
+        <h3>Hey Trixiee,</h3>
+        <p>Good morning, you. I hope you woke up feeling safe, warm, and reminded that somebody is very glad you're in this world.</p>
+        <p>I know the weather can make a day feel a little uncertain. You don't have to be brave every second, and you don't have to make today productive or perfect. Just take care of yourself, one little thing at a time.</p>
+        <p>Have something warm, keep your phone charged, listen to the local alerts, and stay somewhere safe. The rest can wait. I'm sending you the biggest good-morning hug through all this distance and noise.</p>
+        <div class="letter-sign"><span>Always in your corner,</span><b>— Lambo <i>♡</i></b></div>
+        <div class="letter-postmark">SENT WITH CARE · RECEIVED WITH LOVE · ✳</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer"><span>THE MORNING FREQUENCY / FM 011</span><span>THE WORLD CAN BE LOUD. CARE DOESN'T HAVE TO BE.</span><button id="back-to-top">TUNE IN AGAIN ↑</button></footer>
+</main>
+<div class="toast" id="toast" aria-live="polite"></div>
+<script src="./app.js"></script>
+</body>
+</html>
