@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090d24"><meta name="description" content="A little universe of light — a Diwali surprise for Trixiee, from Lambo.">
+<title>A Little Universe of Light ✦ Happy Diwali, Trixiee</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="grain"></div><div class="starfield" id="starfield"></div>
+<div class="topline"><span>✦ A SMALL FESTIVAL, MADE WITH LOVE ✦</span><span class="topright">EDITION ०१ · DIWALI</span></div>
+<main>
+<section class="hero">
+  <div class="eyebrow"><span class="eyebrow-line"></span> THE NIGHT IS YOURS <span class="eyebrow-line"></span></div>
+  <p class="pretitle">For my favourite human,</p>
+  <h1>Happy Diwali,<br><em>Trixiee.</em></h1>
+  <p class="hero-copy">May your world stay soft, your dreams stay loud,<br>and your light never need permission to shine.</p>
+  <div class="names"><span>PRAGNYA</span><i>✦</i><span>TRIXIEE</span></div>
+  <button class="scroll-cue" id="explore"><span class="scroll-dot"></span> SCROLL INTO THE MAGIC <span>↓</span></button>
+  <div class="orb orb-one"></div><div class="orb orb-two"></div>
+</section>
+<section class="diya-stage" id="lights">
+  <div class="section-kicker">01 / THE LIGHTING CEREMONY</div>
+  <h2>A little light<br><em>goes a long way.</em></h2>
+  <p class="section-copy">Tap each diya to wake up its little flame.<br>Every glow is a wish sent your way.</p>
+  <div class="diyas">
+    <button class="diya" aria-label="Light diya one" data-lit="false"><span class="flame"></span><span class="wick"></span><span class="bowl"><i></i><i></i><i></i></span><span class="diya-label">JOY</span></button>
+    <button class="diya" aria-label="Light diya two" data-lit="false"><span class="flame"></span><span class="wick"></span><span class="bowl"><i></i><i></i><i></i></span><span class="diya-label">PEACE</span></button>
+    <button class="diya" aria-label="Light diya three" data-lit="false"><span class="flame"></span><span class="wick"></span><span class="bowl"><i></i><i></i><i></i></span><span class="diya-label">MAGIC</span></button>
+    <button class="diya" aria-label="Light diya four" data-lit="false"><span class="flame"></span><span class="wick"></span><span class="bowl"><i></i><i></i><i></i></span><span class="diya-label">LOVE</span></button>
+    <button class="diya" aria-label="Light diya five" data-lit="false"><span class="flame"></span><span class="wick"></span><span class="bowl"><i></i><i></i><i></i></span><span class="diya-label">WONDER</span></button>
+  </div>
+  <p class="lit-count" id="litCount">0 OF 5 LIGHTS AWAKENED</p>
+  <div class="progress"><span id="progress"></span></div>
+</section>
+<section class="wish-section" id="wish">
+  <div class="wish-art"><div class="halo"></div><div class="moon"></div><span class="spark sp1">✦</span><span class="spark sp2">✧</span><span class="spark sp3">✦</span><span class="wish-orbit">MAKE A WISH · MAKE A WISH ·</span></div>
+  <div class="wish-content"><div class="section-kicker">02 / THE WISH DEPARTMENT</div><h2>Put a wish<br><em>into the universe.</em></h2><p>One little wish. No rules, no limits. The universe has its ears on tonight.</p>
+  <form id="wishForm"><label for="wishInput">TONIGHT, I WISH FOR…</label><textarea id="wishInput" maxlength="140" placeholder="Something beautiful, big or small…" required></textarea><div class="form-foot"><span id="charCount">0 / 140</span><button class="seal-btn" type="submit">SEAL MY WISH <span>↗</span></button></div></form>
+  <div class="sealed" id="sealed" aria-live="polite"><span class="seal-star">✧</span><small>YOUR WISH IS OUT THERE</small><p id="wishResult"></p><span class="seal-note">the universe is listening</span></div>
+  </div>
+</section>
+<section class="surprise" id="surprise">
+  <div class="section-kicker">03 / A LITTLE NOTE FROM LAMBO</div>
+  <div class="letter-card" id="letterCard">
+    <div class="letter-top"><span>✦ PRIVATE POST ✦</span><span>FOR TRIXIEE, ALWAYS</span></div>
+    <div class="letter-seal">L<span>✧</span>T</div>
+    <p class="letter-label">DEAR TRIXIEE,</p>
+    <p class="letter-text">Some people make a room brighter just by being in it. You're that kind of person. I hope this Diwali brings you the kind of happiness that sneaks up on you, the kind of peace that feels like home, and a thousand tiny reasons to smile for no reason at all.</p>
+    <p class="letter-text">Keep being wonderfully, unapologetically you. The world is luckier with your sparkle in it.</p>
+    <div class="letter-sign">With extra light & a little mischief,<br><em>Lambo ♡</em></div>
+    <div class="letter-bottom"><span>MADE OF GOOD VIBES</span><span>ॐ · ✦ · ०१</span></div>
+  </div>
+</section>
+<section class="finale">
+  <div class="final-stars">✧　 ✦　　 ⋆　　✧　　✦</div>
+  <p class="final-small">AND BEFORE YOU GO…</p>
+  <h2>Let the sky<br><em>know you're here.</em></h2>
+  <p class="final-copy">Press the button. Make a little noise.<br>Tonight, the stars are celebrating you.</p>
+  <button id="fireworks" class="firework-btn"><span>✦</span> LIGHT UP THE SKY <span>✦</span></button>
+  <p class="firework-status" id="fireworkStatus">A whole sky of good things, coming up.</p>
+  <div class="signoff">HAPPY DIWALI <span>✧</span> WITH LOVE, LAMBO</div>
+</section>
+</main>
+<footer><span>MADE WITH A LITTLE EXTRA HEART</span><span>✦ PRAGNYA × NEEL ✦</span></footer>
+<div id="burstLayer" aria-hidden="true"></div>
+<script src="app.js"></script>
+</body></html>
