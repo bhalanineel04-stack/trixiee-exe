@@ -33,6 +33,7 @@ jobs:
           cp -R the-lore _site/the-lore
           cp -R diwali _site/diwali
           cp -R the-second-dawn _site/the-second-dawn
+          cp -R the-remarried-empress _site/the-remarried-empress
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload site files

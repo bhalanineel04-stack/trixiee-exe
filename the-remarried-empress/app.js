@@ -1,0 +1,17 @@
+(() => {
+const $=s=>document.querySelector(s);
+const stars=$("#stars");
+for(let i=0;i<90;i++){const s=document.createElement("i");s.className="star";s.style.left=Math.random()*100+"%";s.style.top=Math.random()*100+"%";s.style.setProperty("--o",(.25+Math.random()*.7).toFixed(2));s.style.setProperty("--d",(2+Math.random()*5).toFixed(2)+"s");s.style.animationDelay=(-Math.random()*5).toFixed(2)+"s";stars.appendChild(s)}
+$("#enter").addEventListener("click",()=>{$("#story").scrollIntoView({behavior:"smooth"});sparkle(innerWidth*.54,innerHeight*.4,24)});
+$("#sealDecree").addEventListener("click",()=>{$(".parchment").classList.add("sealed");$("#sealDecree").textContent="DECREE SEALED ✦";$("#sealDecree").disabled=true;sparkle(innerWidth*.72,innerHeight*.55,38)});
+const wishes={
+peace:{title:"May you always have a place to rest.",text:"May your days be gentle and your nights be quiet. May you never need to earn the right to feel safe, and may peace become the room you return to, not the prize you chase."},
+dreams:{title:"May the world make room for your becoming.",text:"May your plans outgrow your fears. May you meet doors that open, people who cheer, and opportunities that remind you how much possibility has been waiting for you."},
+love:{title:"May love arrive without making you smaller.",text:"May you be met with honesty, consistency and care. May affection never feel like a riddle, and may you always be cherished as the whole person you are."}
+};
+document.querySelectorAll(".wish-card").forEach(card=>card.addEventListener("click",()=>{document.querySelectorAll(".wish-card").forEach(x=>x.classList.remove("selected"));card.classList.add("selected");const d=wishes[card.dataset.wish];$("#wishTitle").textContent=d.title;$("#wishText").textContent=d.text;$("#wishKicker").textContent="A BLESSING FOR PRAGYNA";$("#wishReveal").hidden=false;$("#wishReveal").scrollIntoView({behavior:"smooth",block:"center"});sparkle(innerWidth/2,innerHeight*.6,24)}));
+$("#closeWish").addEventListener("click",()=>{$("#wishReveal").hidden=true;document.querySelectorAll(".wish-card").forEach(x=>x.classList.remove("selected"))});
+$("#openLetter").addEventListener("click",()=>{const btn=$("#openLetter"),paper=$("#letterPaper");const opening=!paper.classList.contains("open");paper.classList.toggle("open");btn.classList.toggle("open",opening);$("#letterHint").textContent=opening?"A LETTER, WRITTEN JUST FOR YOU.":"TAP THE ENVELOPE TO OPEN THE LETTER";if(opening)sparkle(innerWidth*.7,innerHeight*.6,20)});
+$("#starWish").addEventListener("click",()=>{$("#finalWish").textContent="For Pragyna: may every new chapter bring the kind of wonder that makes you glad you turned the page. ✧";for(let i=0;i<6;i++)setTimeout(()=>sparkle(Math.random()*innerWidth,70+Math.random()*innerHeight*.7,34),i*190);$("#starWish").textContent="WISH SENT INTO THE STARS ✦"});
+function sparkle(x,y,n=24){const layer=$("#sparkLayer"),colors=["#f3d99f","#e7b4a5","#fff2d2","#b7c9d1","#d2a3b1"];for(let i=0;i<n;i++){const p=document.createElement("i"),a=Math.random()*Math.PI*2,d=35+Math.random()*130;p.className="particle";p.style.left=x+"px";p.style.top=y+"px";p.style.setProperty("--x",Math.cos(a)*d+"px");p.style.setProperty("--y",Math.sin(a)*d+"px");p.style.setProperty("--c",colors[Math.floor(Math.random()*colors.length)]);p.style.setProperty("--t",(.8+Math.random()*1.1)+"s");layer.appendChild(p);setTimeout(()=>p.remove(),2200)}}
+})();
