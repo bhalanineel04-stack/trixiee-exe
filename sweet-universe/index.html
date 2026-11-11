@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#4d201e">
+<meta name="description" content="Pragyna's Sweet Universe — a little dessert boutique made with love by Neel (Lambo).">
+<title>Pragyna's Sweet Universe 🍓</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="sprinkle-layer" aria-hidden="true"></div>
+<header class="topbar">
+  <a class="wordmark" href="#home"><span class="wordmark-icon">🍓</span><span>Pragyna's<small>sweet universe ♡</small></span></a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+  <nav id="mainNav"><a class="active" href="#home">HOME</a><a href="#menu">DESSERTS</a><a href="#icecream">ICE CREAMS</a><a href="#favorites">FAVOURITES</a><a href="#letter">A LETTER</a></nav>
+  <a class="nav-letter" href="#letter">✉ <span>A LITTLE NOTE</span></a>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-photo" role="img" aria-label="A rich, colourful ice cream sundae topped with cookies, berries and cream"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-copy">
+    <div class="hero-eyebrow"><span>✦</span> A LITTLE PLACE MADE OF HAPPINESS <span>✦</span></div>
+    <p class="script-intro">Welcome to</p>
+    <h1>Pragyna's<br><em>Sweet Universe</em><span class="heart-doodle">♡</span></h1>
+    <div class="hero-rule"><i></i><span>♡</span><i></i></div>
+    <p class="hero-desc">A world full of desserts, ice creams<br>and little happiness — made just for you, <b>Pragyna!</b> <span>♥</span></p>
+    <div class="hero-actions"><a class="btn btn-pink" href="#menu">EXPLORE SWEETNESS <span>↗</span></a><a class="text-link" href="#letter">there's a note for you ♡</a></div>
+    <div class="hero-sign">MADE WITH EXTRA SPRINKLES <span>✦</span> BY NEEL <small>(LAMBO)</small></div>
+  </div>
+  <div class="hero-note note-top">Treats for<br>my favourite<br>person <b>♡</b></div>
+  <div class="hero-note note-bottom">You deserve<br>all the sweetness<br>in the world! <b>♡</b></div>
+  <div class="hero-sticker">100%<br><strong>sweet</strong><br>energy</div>
+  <div class="hero-bottom"><span>FRESHLY MADE WITH LOVE</span><span>SCROLL FOR YOUR TREATS ↓</span></div>
+</section>
+
+<section class="category-wrap" aria-label="Dessert categories">
+ <div class="category-grid">
+  <a class="category" href="#menu" data-filter="cakes"><span class="category-icon cake-icon">🍰</span><b>CAKES</b><small>Dreamy cakes<br>with rich layers</small><span class="category-cta">EXPLORE ♡</span></a>
+  <a class="category" href="#menu" data-filter="icecream"><span class="category-icon">🍦</span><b>ICE CREAMS</b><small>Scoops of happiness<br>in every flavour</small><span class="category-cta">EXPLORE ♡</span></a>
+  <a class="category" href="#menu" data-filter="brownies"><span class="category-icon">🍫</span><b>BROWNIES & MORE</b><small>Fudgy, gooey and<br>absolutely amazing</small><span class="category-cta">EXPLORE ♡</span></a>
+  <a class="category" href="#menu" data-filter="drinks"><span class="category-icon">🥤</span><b>MILKSHAKES</b><small>Thick, creamy and<br>totally lovable</small><span class="category-cta">EXPLORE ♡</span></a>
+  <a class="category" href="#menu" data-filter="jars"><span class="category-icon">🍨</span><b>DESSERT JARS</b><small>Sweet little jars<br>full of love</small><span class="category-cta">EXPLORE ♡</span></a>
+ </div>
+</section>
+
+<section class="section menu-section" id="menu">
+ <div class="section-heading">
+  <p class="eyebrow">THE COUNTER IS OPEN, YOUR HIGHNESS</p>
+  <h2>Pragyna's <em>Sweet Picks</em></h2>
+  <p>Handpicked treats for my sweetest person. <span>♡</span></p>
+ </div>
+ <div class="filter-row" role="group" aria-label="Filter desserts">
+  <button class="filter active" data-filter="all">ALL THE GOOD STUFF</button><button class="filter" data-filter="icecream">ICE CREAM</button><button class="filter" data-filter="cakes">CAKES</button><button class="filter" data-filter="brownies">CHOCOLATE</button>
+ </div>
+ <div class="treat-grid" id="treatGrid">
+  <article class="treat-card" data-category="brownies cakes">
+   <div class="treat-photo"><img src="https://images.pexels.com/photos/33149226/pexels-photo-33149226.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Gourmet chocolate brownie sundae with strawberries and cookies" loading="lazy"><span class="photo-tag">THE CLASSIC</span><button class="heart-btn" aria-label="Add Choco Lava Cake to favourites">♡</button></div>
+   <div class="treat-info"><h3>Choco Lava Cake</h3><p>Warm, gooey and straight to the heart.</p><button class="love-it" data-treat="Choco Lava Cake">THIS ONE'S A YES <span>♡</span></button></div>
+  </article>
+  <article class="treat-card" data-category="icecream">
+   <div class="treat-photo"><img src="https://images.pexels.com/photos/17326741/pexels-photo-17326741.png?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Strawberry ice cream sundae with fresh berries and cream" loading="lazy"><span class="photo-tag">BERRY LOVELY</span><button class="heart-btn" aria-label="Add Strawberry Bliss to favourites">♡</button></div>
+   <div class="treat-info"><h3>Strawberry Bliss</h3><p>Sweet, fruity and as beautiful as you.</p><button class="love-it" data-treat="Strawberry Bliss">THIS ONE'S A YES <span>♡</span></button></div>
+  </article>
+  <article class="treat-card" data-category="icecream jars">
+   <div class="treat-photo"><img src="https://media.easy-peasy.ai/5efffd0f-f8a2-49f5-a156-d45808905e63/4c2d3c6b-ab77-4c1a-acb2-3a3c88ca6747.png" alt="Cookies and cream ice cream sundae with chocolate cookies" loading="lazy"><span class="photo-tag">COOKIE CRUSH</span><button class="heart-btn" aria-label="Add Cookies and Cream to favourites">♡</button></div>
+   <div class="treat-info"><h3>Cookies & Cream</h3><p>Classic, delightful and always a good idea.</p><button class="love-it" data-treat="Cookies & Cream">THIS ONE'S A YES <span>♡</span></button></div>
+  </article>
+  <article class="treat-card" data-category="brownies">
+   <div class="treat-photo"><img src="https://images.unsplash.com/photo-1766413580427-88906bbd722d?auto=format&amp;fit=crop&amp;w=1200&amp;q=88" alt="Chocolate sauce being poured over a brownie and ice cream" loading="lazy"><span class="photo-tag">EXTRA FUDGE</span><button class="heart-btn" aria-label="Add Brownie Fudge to favourites">♡</button></div>
+   <div class="treat-info"><h3>Brownie Fudge</h3><p>Because chocolate makes everything better.</p><button class="love-it" data-treat="Brownie Fudge">THIS ONE'S A YES <span>♡</span></button></div>
+  </article>
+  <article class="treat-card" data-category="icecream jars">
+   <div class="treat-photo"><img src="https://s3.amazonaws.com/grocery-project/product_images/mango-ice-cream-6185035-1.jpeg" alt="Mango ice cream served with fresh mango pieces" loading="lazy"><span class="photo-tag">SUNSHINE SCOOP</span><button class="heart-btn" aria-label="Add Mango Magic to favourites">♡</button></div>
+   <div class="treat-info"><h3>Mango Magic</h3><p>Tropical, refreshing and simply magical.</p><button class="love-it" data-treat="Mango Magic">THIS ONE'S A YES <span>♡</span></button></div>
+  </article>
+ </div>
+ <div class="empty-state" id="emptyState" hidden>That flavour is still in the kitchen dreaming up something sweet. ♡</div>
+ <div class="menu-foot"><span>✦</span> NO COUNTING SPRINKLES IN THIS UNIVERSE <span>✦</span></div>
+</section>
+
+<section class="icecream-section section" id="icecream">
+ <div class="icecream-photo"><img src="https://syrian-cafe.com/images/sundae-og.png" alt="Layered chocolate and vanilla ice cream sundae with strawberries, cream and cookies" loading="lazy"></div>
+ <div class="icecream-copy">
+  <p class="eyebrow">SCOOP THERE IT IS</p><h2>Happiness comes<br>in <em>many flavours.</em></h2>
+  <p>Some days call for a little strawberry. Some days need a mountain of chocolate. And some days? One scoop is simply not enough.</p>
+  <div class="flavour-chips"><span>🍓 Strawberry</span><span>🍫 Belgian chocolate</span><span>🥭 Mango magic</span><span>🍪 Cookies & cream</span><span>🍯 Salted caramel</span><span>🍦 Vanilla cloud</span></div>
+  <button class="btn btn-dark" id="surpriseMe">PICK A SCOOP FOR ME <span>✦</span></button>
+  <p class="surprise-result" id="surpriseResult" aria-live="polite">A little surprise is waiting.</p>
+ </div>
+</section>
+
+<section class="custom-section section" id="favorites">
+ <div class="section-heading">
+  <p class="eyebrow">THE MOST IMPORTANT RESEARCH OF THE DAY</p>
+  <h2>Build your <em>dream scoop</em></h2><p>Because the best dessert is the one you invent. ♡</p>
+ </div>
+ <div class="scoop-builder">
+  <div class="builder-visual"><div class="scoop-stack"><span class="scoop scoop-one">🍓</span><span class="scoop scoop-two">🍦</span><span class="scoop scoop-three">🍫</span><span class="scoop-cone">🍦</span></div><div class="builder-sprinkles">✦　♡　✧　✦</div><p>YOUR LITTLE MASTERPIECE</p></div>
+  <div class="builder-controls">
+   <label for="flavour">PICK YOUR MAIN FLAVOUR</label><select id="flavour"><option value="Strawberry Cloud">Strawberry Cloud 🍓</option><option value="Belgian Chocolate">Belgian Chocolate 🍫</option><option value="Mango Sunshine">Mango Sunshine 🥭</option><option value="Cookies & Cream">Cookies & Cream 🍪</option><option value="Salted Caramel">Salted Caramel 🍯</option><option value="Vanilla Dream">Vanilla Dream 🍦</option></select>
+   <label for="topping">ADD A TOPPING</label><select id="topping"><option value="Chocolate drizzle">Chocolate drizzle 🍫</option><option value="Fresh strawberries">Fresh strawberries 🍓</option><option value="Cookie crumble">Cookie crumble 🍪</option><option value="Rainbow sprinkles">Rainbow sprinkles 🌈</option><option value="Caramel crunch">Caramel crunch 🍯</option></select>
+   <label for="extras">ONE EXTRA LITTLE JOY</label><select id="extras"><option value="A warm brownie">A warm brownie 🍰</option><option value="A wafer stick">A wafer stick 🥖</option><option value="Whipped cream">Whipped cream ☁️</option><option value="Extra scoop">One extra scoop 🍨</option><option value="A cherry on top">A cherry on top 🍒</option></select>
+   <button class="btn btn-pink builder-btn" id="makeScoop">MAKE MY DREAM SCOOP <span>♡</span></button>
+   <div class="creation" id="creation" aria-live="polite"><span>YOUR ORDER OF HAPPINESS</span><b>Pragyna's signature scoop</b><p>Choose your flavours, then tap the button.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="letter-section section" id="letter">
+ <div class="letter-card">
+  <div class="letter-photo"><img src="https://images.unsplash.com/photo-1646902823849-1aa943a17f46?auto=format&amp;fit=crop&amp;w=900&amp;q=88" alt="Chocolate covered strawberries arranged as a sweet treat" loading="lazy"><span class="photo-caption">a little sweetness, just for you ♡</span></div>
+  <div class="letter-copy">
+   <p class="eyebrow">SEALED WITH SUGAR & A LITTLE LOVE</p><h2>A Sweet Letter<br><em>For You ♡</em></h2>
+   <p class="dear">Dear Pragyna,</p>
+   <p>You make ordinary moments feel a little more magical. So I made you this tiny corner of the internet — filled with the kind of sweetness you love, because you deserve little reasons to smile, even on the most ordinary days.</p>
+   <p>May life keep surprising you with beautiful things, may your dreams rise higher than the tallest cake, and may there always be one more scoop of happiness waiting for you.</p>
+   <p class="letter-sign">With lots of love,<br><strong>Neel (Lambo) <span>♡</span></strong></p>
+   <button class="letter-open" id="openNote">OPEN YOUR LITTLE NOTE <span>↗</span></button>
+  </div>
+ </div>
+</section>
+
+<section class="finale">
+ <div class="finale-sticker">🍒</div><p class="eyebrow">A FINAL LITTLE REMINDER</p>
+ <h2>Stay sweet.<br><em>Stay wonderfully you.</em></h2>
+ <p>Thanks for being the sweetest part of this little universe, Pragyna.</p>
+ <div class="finale-divider">♡　✦　♡　✦　♡</div>
+ <div class="signature">Made with extra love by <strong>Neel</strong> <small>(Lambo)</small></div>
+ <button class="wish-btn" id="sendWish">SEND A LITTLE SWEET WISH <span>♡</span></button>
+ <p id="wishMessage" class="wish-message" aria-live="polite">May your day be as lovely as your favourite dessert.</p>
+</section>
+</main>
+<footer><span>PRAGYNA'S SWEET UNIVERSE 🍓</span><span>HANDCRAFTED WITH LOVE BY NEEL (LAMBO)</span><a href="#home">BACK TO THE TOP ↑</a></footer>
+
+<div class="modal" id="modal" aria-hidden="true"><div class="modal-backdrop" id="modalBackdrop"></div><div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" aria-label="Close">×</button><div class="modal-berry">🍓</div><p class="eyebrow">A NOTE FROM LAMBO</p><h3 id="modalTitle">For my favourite sweet tooth</h3><p id="modalText"></p><button class="btn btn-dark" id="modalOkay">KEEP THIS SWEET NOTE ♡</button></div></div>
+<div id="sparkLayer" aria-hidden="true"></div>
+<script src="./app.js"></script>
+</body></html>
